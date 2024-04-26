@@ -6,6 +6,7 @@ import copy
 from queue import PriorityQueue
 from queue import Queue
 
+##### Referenced StackOverflow https://stackoverflow.com/questions/2482602/a-general-tree-implementation to see how to create a generic tree structure
 class Tree:
     def __init__(self, state, parent):
         self.state = state
@@ -294,11 +295,6 @@ def a_star_search(problem, queue):
         total_nodes_traversed += 1
         print_node(node[1], problem)
         # print(node)
-        # print(node[2].get_state())
-        # print(node[2].get_parent())
-        # if node[2].get_parent():
-        #     print(node[2].get_parent().get_state())
-        # If puzzles state is goal state then we can return
         if problem.goal_state == node[1]:
             print("SUCCESS")
             print("Printing the Traversed Solution...")
@@ -369,22 +365,5 @@ if __name__ == "__main__":
     print("Calling the function...")
     
     problem = Problem(initial_state, goal_state, int(rows), heuristic, None)
-    
-    # root = Tree([[1, 2, 3], [4, 5, 6], [0, 7, 8]], None)
-    # child1 = Tree([[1, 2, 3], [4, 5, 6], [7, 0, 8]], copy.deepcopy(root))
-    # child2 = Tree([[1, 2, 3], [4, 5, 6], [7, 8, 0]], copy.deepcopy(child1))
-    
-    # print(child2)
-    # print(child2.get_state())
-    # print(child2.get_parent())
-    # print("SDFDFSSDFSD")
-    # parent_node = child2.get_parent()
-    # print(parent_node)
-    # print(parent_node.get_state())
-    # print(parent_node.get_parent())
-    # print("SDFDFSSDFSD")
-    # parent_node = parent_node.get_parent()
-    # print(parent_node.get_state())
-    # print(parent_node.get_parent())
     
     a_star_search(problem, queue)
