@@ -28,9 +28,9 @@ class Problem:
         self.goal_state = goal_state
         self.size = puzzle_size
         self.heuristic = heuristic
-        self.parent = parent
-        # Child nodes are kept as Left, Right, Up, Down
-        self.child = [None, None, None, None]
+        # self.parent = parent
+        # # Child nodes are kept as Left, Right, Up, Down
+        # self.child = [None, None, None, None]
         
     def node_weight(self, puzzle):
         weight = 0
@@ -73,14 +73,14 @@ class Problem:
             return weight
         return weight
     
-    def insert_parent(self, parent):
-        self.parent = parent
+    # def insert_parent(self, parent):
+    #     self.parent = parent
         
-    def insert_child(self, child, child_index):
-        self.child[child_index]= child
+    # def insert_child(self, child, child_index):
+    #     self.child[child_index]= child
 
-    def get_parent(self):
-        return self.parent
+    # def get_parent(self):
+    #     return self.parent
     
 ##### Referenced Professor Eamon Keogh's operators variable naming convention from Slide deck 2__Blind Search_part1 slide 27
 # Move blank left swaps blank with the value on its left
@@ -127,6 +127,7 @@ def expand(node, problem, queue, states):
     # First find where the blank is located
     blank_position = None
     puzzle = None
+    tree_node = Tree(None)
     for row in range(problem.size):
         for column in range(problem.size):
             # If value is 0 (blank) then return its position
@@ -140,134 +141,110 @@ def expand(node, problem, queue, states):
     if blank_position == (0,0):
         puzzle = move_blank_right(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 1)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
         puzzle = move_blank_down(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 3)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
     elif blank_position == (0,problem.size-1):
         puzzle = move_blank_left(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 0)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
         puzzle = move_blank_down(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 3)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
     elif blank_position == (problem.size-1,0):
         puzzle = move_blank_right(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 1)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
         puzzle = move_blank_up(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 2)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
     elif blank_position == (problem.size-1,problem.size-1):
         puzzle = move_blank_left(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 0)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
         puzzle = move_blank_up(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 2)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
     # Border Cases: Top, Left Side, Right Side, Bottom
     elif blank_position[0] == 0:
         puzzle = move_blank_left(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 0)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
         puzzle = move_blank_right(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 1)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
         puzzle = move_blank_down(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 3)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
     elif blank_position[1] == 0:
         puzzle = move_blank_up(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 2)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
         puzzle = move_blank_right(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 1)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
         puzzle = move_blank_down(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 3)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
     elif blank_position[1] == problem.size-1:
         puzzle = move_blank_up(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 2)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
         puzzle = move_blank_left(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 0)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
         puzzle = move_blank_down(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 3)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
     elif blank_position[0] == problem.size-1:
         puzzle = move_blank_up(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 2)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
         puzzle = move_blank_left(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 0)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
         puzzle = move_blank_right(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 1)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
     # For the rest all four operations are valid
     else:
         puzzle = move_blank_up(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 2)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
         puzzle = move_blank_left(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 0)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
         puzzle = move_blank_right(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 1)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
         puzzle = move_blank_down(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            tree_node.insert_child(puzzle, 3)
             states.append(puzzle)
-            queue.put((problem.node_weight(puzzle), puzzle))
+            queue.put((problem.node_weight(puzzle), puzzle, tree_node.insert_parent(node[2])))
     return
 
 def print_node(puzzle, problem):
@@ -282,8 +259,18 @@ def print_node(puzzle, problem):
     print(print_puzzle)
     return
 
-def print_solution(puzzle, problem):
-    pass
+def print_solution(node):
+    while node[2].get_parent():
+        print_puzzle = '['
+        for row in range(problem.size):
+            print_puzzle += '['
+            for column in range(problem.size):
+                print_puzzle += str(puzzle[row][column])
+                print_puzzle += ' '
+            print_puzzle = print_puzzle[:-1] + ']\n'
+        print_puzzle = print_puzzle[:-1] + ']\n'
+        print(print_puzzle)
+    return
 
 ##### Main "Driver" Program from Professor Eamon Keogh's slides
 # function general-search(problem, QUEUEING-FUNCTION)
@@ -302,7 +289,7 @@ def a_star_search(problem, queue):
     ##### Referenced w2school https://www.w3schools.com/python/python_sets.asp on how to use sets in python
     states = [problem.initial_state]
     # Inserts initial_state in the queue as a tuple (weight, puzzle)
-    queue.put((problem.node_weight(problem.initial_state), problem.initial_state))
+    queue.put((problem.node_weight(problem.initial_state), problem.initial_state, Tree(None)))
     node = None
     while True:
         # If queue is empty then there is no solution to the puzzle
@@ -316,7 +303,7 @@ def a_star_search(problem, queue):
         if problem.goal_state == node[1]:
             print("SUCCESS")
             print("Printing the Traversed Solution...")
-            # print_solution(node]1], p)
+            print_solution(node)
             return 
         # Otherwise we check valid operators and insert results into queue
         # Call the expand function to only traverse valid states
@@ -358,13 +345,13 @@ if __name__ == "__main__":
     #               [4, 5, 6],
     #               [7, 8, 0]]
     ##### Depth 2 test case from Professor Eamon Keogh's Project_1_The_Eight_Puzzle_CS_205_2024.pdf handout
-    # initial_state = [[1, 2, 3],
-    #                  [4, 5, 6],
-    #                  [0, 7, 8]]
-    ##### Depth 4 test case from Professor Eamon Keogh's Project_1_The_Eight_Puzzle_CS_205_2024.pdf handout
     initial_state = [[1, 2, 3],
-                     [5, 0, 6],
-                     [4, 7, 8]]
+                     [4, 5, 6],
+                     [0, 7, 8]]
+    ##### Depth 4 test case from Professor Eamon Keogh's Project_1_The_Eight_Puzzle_CS_205_2024.pdf handout
+    # initial_state = [[1, 2, 3],
+    #                  [5, 0, 6],
+    #                  [4, 7, 8]]
     ##### Depth 12 test case from Professor Eamon Keogh's Project_1_The_Eight_Puzzle_CS_205_2024.pdf handout
     # initial_state = [[1, 3, 6],
     #                  [5, 0, 7],
