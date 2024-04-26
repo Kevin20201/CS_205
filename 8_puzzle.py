@@ -245,7 +245,7 @@ def print_node(puzzle, problem):
     print(print_puzzle)
     return
 
-def print_solution(node):
+def print_solution(node, solution_depth):
     traverse_node = node[2]
     while traverse_node.get_parent() is not None:
         puzzle = traverse_node.get_state()
@@ -259,7 +259,8 @@ def print_solution(node):
         print_puzzle = print_puzzle[:-1] + ']\n'
         print(print_puzzle)
         traverse_node = traverse_node.get_parent()
-    return
+        solution_depth+=1
+    return solution_depth
 
 ##### Main "Driver" Program from Professor Eamon Keogh's slides
 # function general-search(problem, QUEUEING-FUNCTION)
@@ -280,6 +281,9 @@ def a_star_search(problem, queue):
     # Inserts initial_state in the queue as a tuple (weight, puzzle)
     queue.put((problem.node_weight(problem.initial_state), problem.initial_state, Tree(problem.initial_state, None)))
     node = None
+    max_queue_size = max(queue.qsize(), 0)
+    total_nodes_traversed = 0
+    solution_depth = 0
     while True:
         # If queue is empty then there is no solution to the puzzle
         if queue.empty():
@@ -287,6 +291,7 @@ def a_star_search(problem, queue):
             return
         # Otherwise we continue to retrieve from the queue
         node = queue.get()
+        total_nodes_traversed += 1
         print_node(node[1], problem)
         # print(node)
         # print(node[2].get_state())
@@ -297,12 +302,16 @@ def a_star_search(problem, queue):
         if problem.goal_state == node[1]:
             print("SUCCESS")
             print("Printing the Traversed Solution...")
-            print_solution(node)
+            solution_depth = print_solution(node, solution_depth)
             print_node(problem.initial_state, problem)
+            print("\nMax Queue Size: ", max_queue_size)
+            print("\nTotal Nodes Traversed: ", total_nodes_traversed)
+            print("\nSolution Depth: ", solution_depth)
             return 
         # Otherwise we check valid operators and insert results into queue
         # Call the expand function to only traverse valid states
         expand(node, problem, queue, states)
+        max_queue_size = max(queue.qsize(), max_queue_size)
         
 if __name__ == "__main__":
     # Asks the user for puzzle_size
@@ -340,13 +349,13 @@ if __name__ == "__main__":
     #               [4, 5, 6],
     #               [7, 8, 0]]
     ##### Depth 2 test case from Professor Eamon Keogh's Project_1_The_Eight_Puzzle_CS_205_2024.pdf handout
-    # initial_state = [[1, 2, 3],
-    #                  [4, 5, 6],
-    #                  [0, 7, 8]]
-    ##### Depth 4 test case from Professor Eamon Keogh's Project_1_The_Eight_Puzzle_CS_205_2024.pdf handout
     initial_state = [[1, 2, 3],
-                     [5, 0, 6],
-                     [4, 7, 8]]
+                     [4, 5, 6],
+                     [0, 7, 8]]
+    ##### Depth 4 test case from Professor Eamon Keogh's Project_1_The_Eight_Puzzle_CS_205_2024.pdf handout
+    # initial_state = [[1, 2, 3],
+    #                  [5, 0, 6],
+    #                  [4, 7, 8]]
     ##### Depth 12 test case from Professor Eamon Keogh's Project_1_The_Eight_Puzzle_CS_205_2024.pdf handout
     # initial_state = [[1, 3, 6],
     #                  [5, 0, 7],
