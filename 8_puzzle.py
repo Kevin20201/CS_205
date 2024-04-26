@@ -10,14 +10,6 @@ class Tree:
     def __init__(self, state, parent):
         self.state = state
         self.parent = parent
-        # Child nodes are kept as Left, Right, Up, Down
-        self.child = [None, None, None, None]
-    
-    def insert_parent(self, parent):
-        self.parent = parent
-        
-    def insert_child(self, child, child_index):
-        self.child[child_index]= child
 
     def get_parent(self):
         return self.parent
@@ -32,9 +24,6 @@ class Problem:
         self.goal_state = goal_state
         self.size = puzzle_size
         self.heuristic = heuristic
-        # self.parent = parent
-        # # Child nodes are kept as Left, Right, Up, Down
-        # self.child = [None, None, None, None]
         
     def node_weight(self, puzzle):
         weight = 0
@@ -76,15 +65,6 @@ class Problem:
                     weight += (weight_row + weight_column)
             return weight
         return weight
-    
-    # def insert_parent(self, parent):
-    #     self.parent = parent
-        
-    # def insert_child(self, child, child_index):
-    #     self.child[child_index]= child
-
-    # def get_parent(self):
-    #     return self.parent
     
 ##### Referenced Professor Eamon Keogh's operators variable naming convention from Slide deck 2__Blind Search_part1 slide 27
 # Move blank left swaps blank with the value on its left
@@ -266,17 +246,6 @@ def print_node(puzzle, problem):
     return
 
 def print_solution(node):
-    # print(node)
-    # print(node[2].get_state())
-    # print(node[2].get_parent())
-    # print("SDFDFSSDFSD")
-    # parent_node = node[2].get_parent()
-    # print(parent_node.get_state())
-    # print(parent_node.get_parent())
-    # print("SDFDFSSDFSD")
-    # parent_node = node[2].get_parent()
-    # print(parent_node.get_state())
-    # print(parent_node.get_parent())
     traverse_node = node[2]
     while traverse_node.get_parent() is not None:
         puzzle = traverse_node.get_state()
