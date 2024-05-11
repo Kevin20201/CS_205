@@ -150,9 +150,6 @@ def expand(node, problem, queue, states):
     elif blank_position == (problem.size-1,0):
         puzzle = move_blank_right(node[1], blank_position[0], blank_position[1])
         if puzzle not in states:
-            # print("sdfsdfd")
-            # print(node[1])
-            # print(copy.deepcopy(node[2]).get_state())
             states.append(puzzle)
             queue.put((problem.node_weight(puzzle)+node[2].depth+1, puzzle, Tree(puzzle, copy.deepcopy(node[2]), node[2].depth+1, problem.node_weight(puzzle))))
         puzzle = move_blank_up(node[1], blank_position[0], blank_position[1])
@@ -294,13 +291,10 @@ def a_star_search(problem, queue):
         # Otherwise we continue to retrieve from the queue
         node = queue.get()
         total_nodes_traversed += 1
-        # print_node(node[1], problem, node[2])
-        # print(node)
         if problem.goal_state == node[1]:
             print("SUCCESS")
             print("Printing the Traversed Solution...\n")
             solution_depth = print_solution(node, solution_depth, problem)
-            # print_node(problem.initial_state, problem)
             print("\nMax Queue Size: ", max_queue_size)
             print("\nTotal Nodes Traversed: ", total_nodes_traversed)
             print("\nSolution Depth: ", solution_depth)
@@ -310,7 +304,8 @@ def a_star_search(problem, queue):
         expand(node, problem, queue, states)
         max_queue_size = max(queue.qsize(), max_queue_size)
 
-##### Referenced CodeHS to understand how to retreive input from users. https://codehs.com/tutorial/rachel/user-input-in-python#:~:text=In%20Python%2C%20we%20use%20the,the%20information%20in%20our%20program.
+##### Referenced CodeHS to understand how to retreive input from users. 
+# https://codehs.com/tutorial/rachel/user-input-in-python#:~:text=In%20Python%2C%20we%20use%20the,the%20information%20in%20our%20program.
 if __name__ == "__main__":
     # Asks the user for puzzle_size
     print("Welcome to N puzzle solver!")

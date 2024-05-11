@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Project 1&colon; The Eight Puzzle</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="project-1-the-eight-puzzle">Project 1: The Eight Puzzle</h1>
+<p>Name:   Shaoyu Tu<br>
+SID:    862137500<br>
+Email:  <a href="mailto:stu024@ucr.edu">stu024@ucr.edu</a><br>
+Date:   May 03, 2024<br>
+<a href="https://github.com/Kevin20201/CS_205">Github Link</a> (<a href="https://github.com/Kevin20201/CS_205">https://github.com/Kevin20201/CS_205</a>)</p>
+<p>The following report's format takes inspiration from Dr. Eamonn Keogh's example report. <a href="#1">[ 1 ]</a>.</p>
+<p>Below is a list of links and short description attached that I consulted in order to complete this project.</p>
+<ul>
+<li>StackOverflow for creating citation links in markdown:  <a href="https://stackoverflow.com/questions/26587527/cite-a-paper-using-github-markdown-syntax">https://stackoverflow.com/questions/26587527/cite-a-paper-using-github-markdown-syntax</a></li>
+<li>CodeHS to understand how to retreive input from users cli: <a href="https://codehs.com/tutorial/rachel/user-input-in-python#:~:text=In%20Python%2C%20we%20use%20the,the%20information%20in%20our%20program">https://codehs.com/tutorial/rachel/user-input-in-python#:~:text=In Python%2C we use the,the information in our program</a></li>
+<li>Geeks for Geeks on how to call deepcopy(): <a href="https://www.geeksforgeeks.org/copy-python-deep-copy-shallow-copy/">https://www.geeksforgeeks.org/copy-python-deep-copy-shallow-copy/</a></li>
+<li>The Python Standard Library for understanding the use of its built-in Queue data structure: <a href="https://docs.python.org/3/library/queue.html">https://docs.python.org/3/library/queue.html</a></li>
+<li>StackOverflow to understand how to create a generic tree node class: <a href="https://stackoverflow.com/questions/2482602/a-general-tree-implementation">https://stackoverflow.com/questions/2482602/a-general-tree-implementation</a></li>
+<li>The Python Tutorial to understand how to write a problem class: <a href="https://docs.python.org/3/tutorial/classes.html">https://docs.python.org/3/tutorial/classes.html</a></li>
+<li>Professor Eamon Keogh's slide deck 3__Heuristic Search 2 slide 4 for setting heuristic values</li>
+<li>Professor Eamon Keogh's operators variable naming convention from Slide deck 2__Blind Search_part1 slide 27</li>
+</ul>
+<p>All major parts in solving the 8-puzzle code is original. Subroutines borrowed from Python libraries includes...</p>
+<ul>
+<li>Subroutines from <code>copy</code>: <code>deepcopy()</code> function is used to distinguish between copy by value from the standard copy by reference.</li>
+<li>Subroutines from <code>queue</code>: <code>Queue()</code> and <code>PriorityQueue()</code> classes are used to handle the different A* heuristics. Functions such as <code>empty()</code>, <code>get()</code>, and <code>qsize()</code> were used to check the queue status.</li>
+</ul>
+<p>&quot;<em>I affirm that I did not use ChatGPT or similar to write the code or text in this work.</em>&quot; <a href="#1">[ 1 ]</a></p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#project-1-the-eight-puzzle">Project 1: The Eight Puzzle</a>
+<ul>
+<li><a href="#contents">Contents</a></li>
+<li><a href="#objective">Objective</a></li>
+<li><a href="#algorithm">Algorithm</a>
+<ul>
+<li><a href="#uniform-cost-search">Uniform Cost Search</a></li>
+<li><a href="#a-search-with-misplaced-tile-heuristic">A* Search with Misplaced Tile Heuristic</a></li>
+<li><a href="#a-search-with-manhattan-distance-heuristic">A* Search with Manhattan Distance Heuristic</a></li>
+</ul>
+</li>
+<li><a href="#evaluation">Evaluation</a>
+<ul>
+<li><a href="#nodes-traversed-vs-depth">Nodes Traversed vs Depth</a></li>
+<li><a href="#max-queue-size-vs-depth">Max Queue Size vs Depth</a></li>
+</ul>
+</li>
+<li><a href="#final-thoughts">Final Thoughts</a></li>
+<li><a href="#trace">Trace</a></li>
+<li><a href="#implementation">Implementation</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="objective">Objective</h2>
+<p>This project aims to solve the 8-puzzle, a sliding puzzle, with heuristic search. Specifically, our objective is to implement the Uniform Cost Search and A* Search to then evaluate their performance.</p>
+<p>The sliding puzzle comes in a variety of sizes such as 4x4, 5x5, 6x6, and etc. But to make the explanation simple, our focus for this report will just be on the 3x3 or 8-puzzle. The 8-puzzle, similar to most other puzzles can be broken down into a simple search problem.</p>
+<p>Below we have defined our problem space.</p>
+<ul>
+<li>The representation of a state is having 8 tiles in a locked position such that there is one empty tile at any given time.</li>
+<li>The initial state is setting up the board such that there are 8 tiles with a distinct empty tile in the 3x3 grid.</li>
+<li>The operators that are acceptable in our case is to think of the puzzle as moving the empty tile. Therefore, the legal moves for the empty tile is at most 4 distinct moves (up, down, left, or right) provided its current position on the board.</li>
+<li>The goal state is to have the tiles end up in ascending order such that for the 8-puzzle, we would have values 1, 2, and 3 on top row, 4, 5, and 6 in the middle row, and lastly 7, 8, and the empty tile be on the last row.</li>
+</ul>
+<h2 id="algorithm">Algorithm</h2>
+<p>For our implementation, we were asked to implement 3 algorithms for our 8-puzzle, the Uniform Cost Search, the A* Search with the Misplaced Tile heuristic, and the A* Search with the Manhattan Distance heuristic.</p>
+<h3 id="uniform-cost-search">Uniform Cost Search</h3>
+<p>We were provided a reminder in the project description that the &quot;Uniform Cost Search is [simply] the A* search [provided a heuristic function] hard coded to zero&quot; <a href="#1">[ 1 ]</a>. Therefore, the Uniform Cost Search in implementation for this problem is also equivalent to running Breadth First Search. The order for travering the node is simply the cost function, g(n), which is set to the depth of the node. Thus, the algorithm will just search depth by depth providing a solution that is both optimal and complete.</p>
+<h3 id="a-search-with-misplaced-tile-heuristic">A* Search with Misplaced Tile Heuristic</h3>
+<p>For our first useful heuristic, we implement the misplaced tile heuristic. As its name suggests, this heuristic simply returns a count equal to the number of tiles misplaced when compared to the goal state excluding the empty tile. The cost function for this algorithm is still the depth of the tree which is equal to how many steps it has already taken from the initial state.</p>
+<h3 id="a-search-with-manhattan-distance-heuristic">A* Search with Manhattan Distance Heuristic</h3>
+<p>For this final heuristic, we implement the manhattan distance heuristic. The Manhattan Distance heuristic acts similar to the Misplaced Tile heuristic in that it accounts for all tiles misplaced when compared to the goal state. But instead of a simple incremented count, the Manhattan Distance heuristic counts how far away the tile is currently from its destination while restricting its movement to a 2d space (up, down, left and right).</p>
+<h2 id="evaluation">Evaluation</h2>
+<p>We were given a set of puzzles to test our implementation along with their optimal solution depth and below are results from these test cases with optimal solutions at depth, 0, 2, 4, 8, 12, 16, 20, and 24.</p>
+<p>The first graph we will look at is Figure 1 as shown below. There are a few things we can take away from this graph. We first notice that puzzles with depth 8 or shallower have similar count of nodes expanded between all 3 algorithms. However, in the case of Uniform Cost search where no heuristic function exists, this depth rapidly grows to as much as 50 times larger when compared to the best performing algorithm, the A* with Manhattan Distance heuristic search. Lastly, we also see that with the additional heuristic functions in A*, the total nodes expanded is similar between the two algorithms.</p>
+<h3 id="nodes-traversed-vs-depth">Nodes Traversed vs Depth</h3>
+<!-- ![alt text](image-4.png) -->
+<!-- <img src="file:////Users/kevintu/Documents/Python/CS205/CS_205/image.png" alt="drawing" height="500" width="500"/> -->
+<p><img src="file:////Users/kevintu/Documents/Python/CS205/CS_205/image-4.png" alt="drawing" width="500"/><br>
+Figure 1: <em>A graph showcasing the number of nodes traversed as solution depth grows.</em></p>
+<p>Figure 2 shows the relationship between max queue size and solution depth from the puzzles. Similar to Figure 1, we see trends of the differences being negligible for puzzles that have solution of depth 8 or shallower. Then we see this rapid growth in the queue size for Uniform Cost search as the depth of the solution increases. For the relationship between max queue size and depth the difference is over 17 times between Uniform Cost search, the largest, and A* with Manhattan Distance heuristic search, the smallest, when comparing solution depth at 24. Finally, we also notice that the difference between the two A* search algorithms have similar proportional differences between the two figures at each test case.</p>
+<h3 id="max-queue-size-vs-depth">Max Queue Size vs Depth</h3>
+<!-- ![alt text](image-3.png) -->
+<p><img src="file:////Users/kevintu/Documents/Python/CS205/CS_205/image-3.png" alt="drawing" width="500"/><br>
+Figure 2: <em>A graph showcasing the maximum queue size as solution depth grows.</em></p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>It was shocking to see what a drastic difference it makes when a useful heuristic function was chosen for A* over not having one at all. These heuristic functions that we tried are so simple in its idea giving an estimate to how many more moves we think it would take to solve the puzzle. Even with its simplicity, we are still able to capture a massive improvement over not having one.</p>
+<p>The order from best performing to worst given the 3 algorithms we implemented ranks as follows: A* Search with the Manhattan Distance heuristic, A* Search with the Misplaced Tile heuristic, and Uniform Cost Search or in our project being equivalent to Breadth First Search and A* with heuristic function outputting the value 0.</p>
+<p>These test cases with optimal solutions ranging from 0 to 24 shows us that given puzzles with shallow solution depths (8 or less) the algorithm of choice is not so important. But when it comes to searching for solutions at for example depth 20, choosing the A* with a useful heuristic becomes imperative.</p>
+<h2 id="trace">Trace</h2>
+<p>The following is a traceback for a puzzle of depth 4 with Manhattan Distance Heuristic.</p>
+<pre><code class="language-python">❯ python3 8_puzzle.py
+Welcome to N puzzle solver!
+What size puzzle would you like to generate? (e.g. <span class="hljs-number">8</span>, <span class="hljs-number">15</span>, <span class="hljs-number">25</span>)
+Please INSERT a valid natural number <span class="hljs-keyword">and</span> press ENTER: <span class="hljs-number">8</span>
+
+Please INSERT a valid puzzle you would like to test row by row.
+Note: <span class="hljs-keyword">for</span> the empty space <span class="hljs-keyword">in</span> the puzzle, please INSERT the number <span class="hljs-number">0.</span>
+
+Please INSERT values <span class="hljs-keyword">for</span> row <span class="hljs-number">1</span> <span class="hljs-keyword">with</span> a space <span class="hljs-keyword">in</span> between each number:
+Press ENTER when you are ready.
+<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>
+
+Please INSERT values <span class="hljs-keyword">for</span> row <span class="hljs-number">2</span> <span class="hljs-keyword">with</span> a space <span class="hljs-keyword">in</span> between each number:
+Press ENTER when you are ready.
+<span class="hljs-number">5</span> <span class="hljs-number">0</span> <span class="hljs-number">6</span>
+
+Please INSERT values <span class="hljs-keyword">for</span> row <span class="hljs-number">3</span> <span class="hljs-keyword">with</span> a space <span class="hljs-keyword">in</span> between each number:
+Press ENTER when you are ready.
+<span class="hljs-number">4</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span> 
+
+Please select the algorithm you would like the program to use by entering its correspoding number <span class="hljs-keyword">as</span> shown: 
+
+<span class="hljs-number">1.</span> Uniform Cost Search
+<span class="hljs-number">2.</span> A* <span class="hljs-keyword">with</span> the Misplaced Tile heuristic
+<span class="hljs-number">3.</span> A* <span class="hljs-keyword">with</span> the Manhattan Distance heuristic
+
+Select an algortihm <span class="hljs-keyword">and</span> press ENTER: <span class="hljs-number">3</span>
+
+The program has successfully loaded the puzzle <span class="hljs-keyword">and</span> will begin to search <span class="hljs-keyword">for</span> the goal_state...
+
+Calling the function...
+SUCCESS
+Printing the Traversed Solution...
+
+Node to expand has g(n) = <span class="hljs-number">4</span> <span class="hljs-keyword">and</span> h(n) = <span class="hljs-number">0</span> <span class="hljs-keyword">is</span>... 
+[[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>]
+[<span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span>]
+[<span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">0</span>]]
+
+Node to expand has g(n) = <span class="hljs-number">3</span> <span class="hljs-keyword">and</span> h(n) = <span class="hljs-number">1</span> <span class="hljs-keyword">is</span>... 
+[[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>]
+[<span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span>]
+[<span class="hljs-number">7</span> <span class="hljs-number">0</span> <span class="hljs-number">8</span>]]
+
+Node to expand has g(n) = <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> h(n) = <span class="hljs-number">2</span> <span class="hljs-keyword">is</span>... 
+[[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>]
+[<span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span>]
+[<span class="hljs-number">0</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span>]]
+
+Node to expand has g(n) = <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> h(n) = <span class="hljs-number">3</span> <span class="hljs-keyword">is</span>... 
+[[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>]
+[<span class="hljs-number">0</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span>]
+[<span class="hljs-number">4</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span>]]
+
+Node to expand has g(n) = <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> h(n) = <span class="hljs-number">4</span> <span class="hljs-keyword">is</span>... 
+[[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>]
+[<span class="hljs-number">5</span> <span class="hljs-number">0</span> <span class="hljs-number">6</span>]
+[<span class="hljs-number">4</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span>]]
+
+
+Max Queue Size:  <span class="hljs-number">6</span>
+
+Total Nodes Traversed:  <span class="hljs-number">5</span>
+
+Solution Depth:  <span class="hljs-number">4</span>
+</code></pre>
+<p>The following is a traceback for a puzzle of depth 16 with Misplaced Tile Heuristic.</p>
+<pre><code class="language-python">❯ python3 8_puzzle.py
+Welcome to N puzzle solver!
+What size puzzle would you like to generate? (e.g. <span class="hljs-number">8</span>, <span class="hljs-number">15</span>, <span class="hljs-number">25</span>)
+Please INSERT a valid natural number <span class="hljs-keyword">and</span> press ENTER: <span class="hljs-number">8</span>
+
+Please INSERT a valid puzzle you would like to test row by row.
+Note: <span class="hljs-keyword">for</span> the empty space <span class="hljs-keyword">in</span> the puzzle, please INSERT the number <span class="hljs-number">0.</span>
+
+Please INSERT values <span class="hljs-keyword">for</span> row <span class="hljs-number">1</span> <span class="hljs-keyword">with</span> a space <span class="hljs-keyword">in</span> between each number:
+Press ENTER when you are ready.
+<span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span>
+
+Please INSERT values <span class="hljs-keyword">for</span> row <span class="hljs-number">2</span> <span class="hljs-keyword">with</span> a space <span class="hljs-keyword">in</span> between each number:
+Press ENTER when you are ready.
+<span class="hljs-number">5</span> <span class="hljs-number">0</span> <span class="hljs-number">3</span>
+
+Please INSERT values <span class="hljs-keyword">for</span> row <span class="hljs-number">3</span> <span class="hljs-keyword">with</span> a space <span class="hljs-keyword">in</span> between each number:
+Press ENTER when you are ready.
+<span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">2</span>
+
+Please select the algorithm you would like the program to use by entering its correspoding number <span class="hljs-keyword">as</span> shown: 
+
+<span class="hljs-number">1.</span> Uniform Cost Search
+<span class="hljs-number">2.</span> A* <span class="hljs-keyword">with</span> the Misplaced Tile heuristic
+<span class="hljs-number">3.</span> A* <span class="hljs-keyword">with</span> the Manhattan Distance heuristic
+
+Select an algortihm <span class="hljs-keyword">and</span> press ENTER: <span class="hljs-number">2</span>
+
+The program has successfully loaded the puzzle <span class="hljs-keyword">and</span> will begin to search <span class="hljs-keyword">for</span> the goal_state...
+
+Calling the function...
+SUCCESS
+Printing the Traversed Solution...
+
+Node to expand has g(n) = <span class="hljs-number">16</span> <span class="hljs-keyword">and</span> h(n) = <span class="hljs-number">0</span> <span class="hljs-keyword">is</span>... 
+[[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>]
+[<span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span>]
+[<span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">0</span>]]
+
+Node to expand has g(n) = <span class="hljs-number">15</span> <span class="hljs-keyword">and</span> h(n) = <span class="hljs-number">1</span> <span class="hljs-keyword">is</span>... 
+[[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>]
+[<span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span>]
+[<span class="hljs-number">7</span> <span class="hljs-number">0</span> <span class="hljs-number">8</span>]]
+
+<span class="hljs-meta">... </span><span class="hljs-comment"># Removed traces to shorten the print</span>
+
+Node to expand has g(n) = <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> h(n) = <span class="hljs-number">6</span> <span class="hljs-keyword">is</span>... 
+[[<span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">0</span>]
+[<span class="hljs-number">5</span> <span class="hljs-number">3</span> <span class="hljs-number">7</span>]
+[<span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">2</span>]]
+
+Node to expand has g(n) = <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> h(n) = <span class="hljs-number">6</span> <span class="hljs-keyword">is</span>... 
+[[<span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span>]
+[<span class="hljs-number">5</span> <span class="hljs-number">3</span> <span class="hljs-number">0</span>]
+[<span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">2</span>]]
+
+Node to expand has g(n) = <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> h(n) = <span class="hljs-number">6</span> <span class="hljs-keyword">is</span>... 
+[[<span class="hljs-number">1</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span>]
+[<span class="hljs-number">5</span> <span class="hljs-number">0</span> <span class="hljs-number">3</span>]
+[<span class="hljs-number">4</span> <span class="hljs-number">8</span> <span class="hljs-number">2</span>]]
+
+
+Max Queue Size:  <span class="hljs-number">301</span>
+
+Total Nodes Traversed:  <span class="hljs-number">489</span>
+
+Solution Depth:  <span class="hljs-number">16</span>
+</code></pre>
+<p>The following is a traceback for a 15-puzzle of depth 2 with Manhattan Distance Heuristic to show that the implementation is also generalized to allow puzzle of different input sizes.</p>
+<pre><code class="language-python">❯ python3 8_puzzle.py
+Welcome to N puzzle solver!
+What size puzzle would you like to generate? (e.g. <span class="hljs-number">8</span>, <span class="hljs-number">15</span>, <span class="hljs-number">25</span>)
+Please INSERT a valid natural number <span class="hljs-keyword">and</span> press ENTER: <span class="hljs-number">15</span>
+
+Please INSERT a valid puzzle you would like to test row by row.
+Note: <span class="hljs-keyword">for</span> the empty space <span class="hljs-keyword">in</span> the puzzle, please INSERT the number <span class="hljs-number">0.</span>
+
+Please INSERT values <span class="hljs-keyword">for</span> row <span class="hljs-number">1</span> <span class="hljs-keyword">with</span> a space <span class="hljs-keyword">in</span> between each number:
+Press ENTER when you are ready.
+<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>
+
+Please INSERT values <span class="hljs-keyword">for</span> row <span class="hljs-number">2</span> <span class="hljs-keyword">with</span> a space <span class="hljs-keyword">in</span> between each number:
+Press ENTER when you are ready.
+<span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span>
+
+Please INSERT values <span class="hljs-keyword">for</span> row <span class="hljs-number">3</span> <span class="hljs-keyword">with</span> a space <span class="hljs-keyword">in</span> between each number:
+Press ENTER when you are ready.
+<span class="hljs-number">9</span> <span class="hljs-number">10</span> <span class="hljs-number">11</span> <span class="hljs-number">12</span>
+
+Please INSERT values <span class="hljs-keyword">for</span> row <span class="hljs-number">4</span> <span class="hljs-keyword">with</span> a space <span class="hljs-keyword">in</span> between each number:
+Press ENTER when you are ready.
+<span class="hljs-number">13</span> <span class="hljs-number">0</span> <span class="hljs-number">14</span> <span class="hljs-number">15</span>
+
+Please select the algorithm you would like the program to use by entering its correspoding number <span class="hljs-keyword">as</span> shown: 
+
+<span class="hljs-number">1.</span> Uniform Cost Search
+<span class="hljs-number">2.</span> A* <span class="hljs-keyword">with</span> the Misplaced Tile heuristic
+<span class="hljs-number">3.</span> A* <span class="hljs-keyword">with</span> the Manhattan Distance heuristic
+
+Select an algortihm <span class="hljs-keyword">and</span> press ENTER: <span class="hljs-number">3</span>
+
+The program has successfully loaded the puzzle <span class="hljs-keyword">and</span> will begin to search <span class="hljs-keyword">for</span> the goal_state...
+
+Calling the function...
+SUCCESS
+Printing the Traversed Solution...
+
+Node to expand has g(n) = <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> h(n) = <span class="hljs-number">0</span> <span class="hljs-keyword">is</span>... 
+[[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>]
+[<span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span>]
+[<span class="hljs-number">9</span> <span class="hljs-number">10</span> <span class="hljs-number">11</span> <span class="hljs-number">12</span>]
+[<span class="hljs-number">13</span> <span class="hljs-number">14</span> <span class="hljs-number">15</span> <span class="hljs-number">0</span>]]
+
+Node to expand has g(n) = <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> h(n) = <span class="hljs-number">1</span> <span class="hljs-keyword">is</span>... 
+[[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>]
+[<span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span>]
+[<span class="hljs-number">9</span> <span class="hljs-number">10</span> <span class="hljs-number">11</span> <span class="hljs-number">12</span>]
+[<span class="hljs-number">13</span> <span class="hljs-number">14</span> <span class="hljs-number">0</span> <span class="hljs-number">15</span>]]
+
+Node to expand has g(n) = <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> h(n) = <span class="hljs-number">2</span> <span class="hljs-keyword">is</span>... 
+[[<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>]
+[<span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span>]
+[<span class="hljs-number">9</span> <span class="hljs-number">10</span> <span class="hljs-number">11</span> <span class="hljs-number">12</span>]
+[<span class="hljs-number">13</span> <span class="hljs-number">0</span> <span class="hljs-number">14</span> <span class="hljs-number">15</span>]]
+
+
+Max Queue Size:  <span class="hljs-number">4</span>
+
+Total Nodes Traversed:  <span class="hljs-number">3</span>
+
+Solution Depth:  <span class="hljs-number">2</span>
+</code></pre>
+<h2 id="implementation">Implementation</h2>
+<p><a href="https://github.com/Kevin20201/CS_205">Github Link</a> (<a href="https://github.com/Kevin20201/CS_205">https://github.com/Kevin20201/CS_205</a>)</p>
+<p><strong>8_puzzle.py</strong></p>
+<p><img src="file:////Users/kevintu/Documents/Python/CS205/CS_205/image.png" alt="alt text">
+<img src="file:////Users/kevintu/Documents/Python/CS205/CS_205/image-1.png" alt="alt text">
+<img src="file:////Users/kevintu/Documents/Python/CS205/CS_205/image-2.png" alt="alt text">
+<img src="file:////Users/kevintu/Documents/Python/CS205/CS_205/image-5.png" alt="alt text">
+<img src="file:////Users/kevintu/Documents/Python/CS205/CS_205/image-6.png" alt="alt text">
+<img src="file:////Users/kevintu/Documents/Python/CS205/CS_205/image-7.png" alt="alt text">
+<img src="file:////Users/kevintu/Documents/Python/CS205/CS_205/image-8.png" alt="alt text">
+<img src="file:////Users/kevintu/Documents/Python/CS205/CS_205/image-9.png" alt="alt text"></p>
+<h2 id="references">References</h2>
+<p><a id="1">[1]</a>
+Project 1 direction file: <a href="https://www.dropbox.com/scl/fi/ntcwot5x8zihrtqot0ysi/Project_1_The_Eight_Puzzle_CS_205_2024.pdf?rlkey=wvosnvls0lkgpiv7h5xsoicz8&amp;e=1&amp;dl=0">https://www.dropbox.com/scl/fi/ntcwot5x8zihrtqot0ysi/Project_1_The_Eight_Puzzle_CS_205_2024.pdf?rlkey=wvosnvls0lkgpiv7h5xsoicz8&amp;e=1&amp;dl=0</a></p>
+
+            
+            
+        </body>
+        </html>
