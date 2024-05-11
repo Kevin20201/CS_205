@@ -5,6 +5,7 @@ import copy
 ##### Referenced The Python Standard Library https://docs.python.org/3/library/queue.html
 from queue import PriorityQueue
 from queue import Queue
+import time
 
 ##### Referenced StackOverflow https://stackoverflow.com/questions/2482602/a-general-tree-implementation to see how to create a generic tree structure
 class Tree:
@@ -20,7 +21,7 @@ class Tree:
     def get_state(self):
         return self.state
 
-##### Referenced The Python Tutorial https://docs.python.org/3/tutorial/classes.html to understand how to write a probelm class
+##### Referenced The Python Tutorial https://docs.python.org/3/tutorial/classes.html to understand how to write a problem class
 class Problem:
     def __init__(self, initial_state, goal_state, puzzle_size, heuristic):
         self.initial_state = initial_state
@@ -41,7 +42,10 @@ class Problem:
                 for column in range(self.size):
                     # Check if location of value is same as goal state (expected)
                     if puzzle[row][column] != self.goal_state[row][column]:
-                        weight+=1
+                        if puzzle[row][column] == 0:
+                            continue
+                        else:
+                            weight+=1
             return weight
         #manhattan Distance heuristic\n")
         elif (self.heuristic == 3):
@@ -55,6 +59,7 @@ class Problem:
                     # If value is the blank spot, then row is set at the bottom
                     if value == 0:
                         correct_row=self.size
+                        continue
                     # Adjustment for indexing on row and special cases for modulo 0 values
                     if correct_column == 0:
                         correct_column = self.size-1
@@ -259,7 +264,7 @@ def print_solution(node, solution_depth, problem):
     print_node(traverse_node.state, problem, traverse_node)
     return solution_depth
 
-##### Main "Driver" Program from Professor Eamon Keogh's slides
+##### Pseudo Code Main "Driver" Program from Professor Eamon Keogh's slides
 # function general-search(problem, QUEUEING-FUNCTION)
 # nodes = MAKE-QUEUE(MAKE-NODE(problem.INITIAL-STATE))
 # loop do
@@ -289,7 +294,7 @@ def a_star_search(problem, queue):
         # Otherwise we continue to retrieve from the queue
         node = queue.get()
         total_nodes_traversed += 1
-        print_node(node[1], problem, node[2])
+        # print_node(node[1], problem, node[2])
         # print(node)
         if problem.goal_state == node[1]:
             print("SUCCESS")
@@ -312,57 +317,91 @@ if __name__ == "__main__":
     print("What size puzzle would you like to generate? (e.g. 8, 15, 25)")
     # print("Please INSERT a valid natural number and press ENTER: ")
     puzzle_size = input("Please INSERT a valid natural number and press ENTER: ")
-    puzzle_size = int(puzzle_size)
     # puzzle_size = 8
+    puzzle_size = int(puzzle_size)
     # Asks the user for number of rows in the puzzle
     # print("Please INSERT the amount of rows needed for the puzzle: ")
     rows = pow(puzzle_size+1, 1/2)
-    print(rows)
-    print("Please INSERT a valid puzzle you would like to test row by row.\n" + 
+    # print(rows)
+    print("\nPlease INSERT a valid puzzle you would like to test row by row.\n" + 
           "Note: for the empty space in the puzzle, please INSERT the number 0.")
     # Asks the user to enter the puzzle they would like to test
-    puzzle = []
+    initial_state = []
     for row in range(int(rows)):
-        print("Please INSERT values for row " + str(row+1) + " with a space in between each number:\n" + 
-              "Press ENTER when you are ready.\n")
-        # puzzle.insert()
+        puzzle_row = input("\nPlease INSERT values for row " + str(row+1) + " with a space in between each number:\n" + 
+              "Press ENTER when you are ready.\n").split()
+        for i, val in enumerate(puzzle_row):
+            puzzle_row[i] = int(val)
+        initial_state.append(puzzle_row)
     # Asks the user the algorithm they would like to use
-    print("Please select the algorithm you would like the program to use by entering its correspoding number as shown: \n")
+    print("\nPlease select the algorithm you would like the program to use by entering its correspoding number as shown: \n")
     print("1. Uniform Cost Search\n" + 
           "2. A* with the Misplaced Tile heuristic\n" +
           "3. A* with the Manhattan Distance heuristic\n")
-    print("Select an algortihm and press ENTER: ")
-    heuristic = 3
+    heuristic = input("Select an algortihm and press ENTER: ")
+    heuristic = int(heuristic)
     ## The program now have everything it needs to begin
-    print("The program has successfully loaded the puzzle and will begin to search for the goal_state...")
-    # goal_state = for num in range(puzzle_size+1)
-    goal_state = [[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 0]]
-    ##### Depth 0 test case from Professor Eamon Keogh's Project_1_The_Eight_Puzzle_CS_205_2024.pdf handout
-    # initial_state = [[1, 2, 3],
+    print("\nThe program has successfully loaded the puzzle and will begin to search for the goal_state...")
+    goal_state = []
+    puzzle_row = []
+    for i in range(int(rows*rows)):
+        puzzle_row.append(i+1)
+        if len(puzzle_row) == rows:
+            goal_state.append(puzzle_row)
+            puzzle_row = []
+    goal_state[int(rows-1)][int(rows-1)] = 0
+    # print(goal_state)
+    # goal_state = [[1, 2, 3],
     #               [4, 5, 6],
     #               [7, 8, 0]]
+    ##### Depth 0 test case from Professor Eamon Keogh's Project_1_The_Eight_Puzzle_CS_205_2024.pdf handout
+    # initial_state = [[1, 2, 3],
+                        # [4, 5, 6],
+                        # [7, 8, 0]]
     ##### Depth 2 test case from Professor Eamon Keogh's Project_1_The_Eight_Puzzle_CS_205_2024.pdf handout
-    initial_state = [[1, 2, 3],
-                     [4, 5, 6],
-                     [0, 7, 8]]
+    # initial_state = [[1, 2, 3],
+    #                  [4, 5, 6],
+    #                  [0, 7, 8]]
     ##### Depth 4 test case from Professor Eamon Keogh's Project_1_The_Eight_Puzzle_CS_205_2024.pdf handout
     # initial_state = [[1, 2, 3],
     #                  [5, 0, 6],
+    #                  [4, 7, 8]]
+    ##### Depth 8 test case from Professor Eamon Keogh's Project_1_The_Eight_Puzzle_CS_205_2024.pdf handout
+    # initial_state = [[1, 3, 6],
+    #                  [5, 0, 2],
     #                  [4, 7, 8]]
     ##### Depth 12 test case from Professor Eamon Keogh's Project_1_The_Eight_Puzzle_CS_205_2024.pdf handout
     # initial_state = [[1, 3, 6],
     #                  [5, 0, 7],
     #                  [4, 8, 2]]
+    ##### Depth 16 test case from Professor Eamon Keogh's Project_1_The_Eight_Puzzle_CS_205_2024.pdf handout
+    # initial_state = [[1, 6, 7],
+    #                  [5, 0, 3],
+    #                  [4, 8, 2]]
+    ##### Depth 20 test case from Professor Eamon Keogh's Project_1_The_Eight_Puzzle_CS_205_2024.pdf handout
+    # initial_state = [[7, 1, 2],
+    #                  [4, 8, 5],
+    #                  [6, 3, 0]]
+    ##### Depth 24 test case from Professor Eamon Keogh's Project_1_The_Eight_Puzzle_CS_205_2024.pdf handout
+    # initial_state = [[0, 7, 2],
+    #                  [4, 6, 1],
+    #                  [3, 5, 8]]
     queue = None
     if heuristic == 1:
         queue = Queue()
     else:
         queue = PriorityQueue()
 
-    print("Calling the function...")
+    print("\nCalling the function...")
 
+    start_time = time.time()
+    
     problem = Problem(initial_state, goal_state, int(rows), heuristic)
     
     a_star_search(problem, queue)
+    
+    end_time = time.time()
+
+    total_time = end_time - start_time
+    
+    print("\nTotal Time: ", total_time)
