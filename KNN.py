@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import copy
+import time
 
 ### Sample Files
 ### Referenced GeeksforGeeks to read in a txt file https://www.geeksforgeeks.org/how-to-read-space-delimited-files-in-pandas/#
@@ -40,8 +41,6 @@ class KNN_Classifier:
     def pred_class(self):
         pred_classes = []
         for row in range(self.k):
-            # print("KNN: ", self.train_set[self.nearest_neighbors[row]])
-            # print("KNN: ", self.train_set[self.nearest_neighbors[row]][0])
             pred_classes.append(self.train_set[self.nearest_neighbors[row]][0])
         ### Referenced NumPy unique to return the predicted class https://numpy.org/doc/stable/reference/generated/numpy.unique.html
         classes, counts = np.unique(pred_classes, return_counts=True)
@@ -54,13 +53,10 @@ class KNN_Classifier:
     def train(self):
         ### Test every testing entry to training entry
         nearest_neighbors = []
-        # print(self.test_set)
         for train_row in self.train_set:
             nearest_neighbors.append(self.distance(train_row[1:] - self.test_set[1:]))
-        # print(nearest_neighbors)
         ### Referenced NumPy argsort to sort by index of distances https://numpy.org/doc/stable/reference/generated/numpy.argsort.html
         self.nearest_neighbors = np.argsort(nearest_neighbors)
-        # print(self.nearest_neighbors)
 
 class Feature_Selection:
     def __init__(self, dataset=None, k=None):
@@ -74,7 +70,7 @@ class Feature_Selection:
         self.best_features = [-1, -1]
     
     def print_best_features(self):
-        print("Finished search!!! The best feature subset is {" + self.best_features[0] + "}, which has an accuracy of " + str(self.best_features[1]) + "%")
+        print("Finished search!!! The best feature subset is {" + self.best_features[0] + "}, which has an accuracy of " + str(self.best_features[1]*100) + "%")
 
     def greedy_forward(self):
         if self.dataset.shape[1] == 1:
@@ -86,38 +82,27 @@ class Feature_Selection:
             if column == 'label':
                 continue
             feature = pd.concat([self.feature_subset, pd.DataFrame(self.dataset[column])], axis=1).to_numpy()
-            # print(feature)
             correct = 0
             ### K-Fold CV
             for cfv in range(int(len(feature)/self.k)):
-                # print(cfv)
-                # print(len(feature)/self.k)
                 train_data = np.delete(feature, cfv, axis=0)
-                # print(train_data)
                 test_data = feature[cfv]
-                # print(test_data)
-
+                
                 knn = KNN_Classifier(train_data, test_data, 1)
                 knn.train()
-                # print(test_data[0])
-                # print(knn.pred_class()[0])
                 if knn.pred_class()[0] == test_data[0]:
-                    # print('HELLO')
                     correct += 1
             precision.append(correct/int(len(feature)/self.k))
             feature_name.append(column)
+            
             if self.feature_set:
                 feat_str = ','.join(str(feature) for feature in self.feature_set)
-                print("\tUsing feature(s) {" + feat_str + "," + str(column) + "} accuracy is " + str(correct/int(len(feature)/self.k)) + '%')
+                print("\tUsing feature(s) {" + feat_str + "," + str(column) + "} accuracy is " + str(correct/int(len(feature)/self.k)*100) + '%')
             else:
-                print("\tUsing feature(s) {" + str(column) + "} accuracy is " + str(correct/int(len(feature)/self.k)) + '%')
-        # print(precision)
-        # print(feature_name)
+                print("\tUsing feature(s) {" + str(column) + "} accuracy is " + str(correct/int(len(feature)/self.k)*100) + '%')
+                
         precision_index = np.argsort(precision)
-        # print(precision_index)
         self.feature_set.append(feature_name[precision_index[-1]])
-        # print(precision[precision_index[-1]])
-        # print(self.feature_set)
         feat_str = ','.join(str(feature) for feature in self.feature_set)
         prev = self.best_features[1]
         self.best_features[1] = max(self.best_features[1], precision[precision_index[-1]])
@@ -125,12 +110,10 @@ class Feature_Selection:
             self.best_features[0] = feat_str
         if precision[precision_index[-1]] < self.best_features[1]:
             print("\n(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)")
-        print("\nFeature set {" + feat_str + "} was best, accuracy is " + str(precision[precision_index[-1]]) + "%\n")
-        ### Referenced Pandas library to understand how to drop column https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop.html
+        print("\nFeature set {" + feat_str + "} was best, accuracy is " + str(precision[precision_index[-1]]*100) + "%\n")
         self.feature_subset = pd.concat([self.feature_subset, pd.DataFrame(self.dataset[feature_name[precision_index[-1]]])], axis=1)
-        # print(self.feature_subset)
+        ### Referenced Pandas library to understand how to drop column https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop.html
         self.dataset = self.dataset.drop(columns=[feature_name[precision_index[-1]]])
-        # print(self.dataset)
         self.greedy_forward()
         pass
     
@@ -143,40 +126,28 @@ class Feature_Selection:
         for column in self.dataset_backwards.columns:
             if column == 'label':
                 continue
-            # print(column)
             feature = self.feature_subset_backwards.drop(columns=[column]).to_numpy()
-            # print(feature)
             correct = 0
             ### K-Fold CV
             for cfv in range(int(len(feature)/self.k)):
-                # print(cfv)
-                # print(len(feature)/self.k)
                 train_data = np.delete(feature, cfv, axis=0)
-                # print(train_data)
                 test_data = feature[cfv]
-                # print(test_data)
 
                 knn = KNN_Classifier(train_data, test_data, 1)
                 knn.train()
-                # print(test_data[0])
-                # print(knn.pred_class()[0])
                 if knn.pred_class()[0] == test_data[0]:
-                    # print('HELLO')
                     correct += 1
             precision.append(correct/int(len(feature)/self.k))
             feature_name.append(column)
+            
             if self.feature_set_backwards:
                 feat_str = ','.join(str(feature) for feature in self.feature_set_backwards)
-                print("\tRemoving feature(s) {" + feat_str + "," + str(column) + "} accuracy is " + str(correct/int(len(feature)/self.k)) + '%')
+                print("\tRemoving feature(s) {" + feat_str + "," + str(column) + "} accuracy is " + str(correct/int(len(feature)/self.k)*100) + '%')
             else:
-                print("\tRemoving feature(s) {" + str(column) + "} accuracy is " + str(correct/int(len(feature)/self.k)) + '%')
-        # print(precision)
-        # print(feature_name)
+                print("\tRemoving feature(s) {" + str(column) + "} accuracy is " + str(correct/int(len(feature)/self.k)*100) + '%')
+
         precision_index = np.argsort(precision)
-        # print(precision_index)
-        # print(precision[precision_index[-1]])
         self.feature_set_backwards.append(feature_name[precision_index[-1]])
-        # print(self.feature_set_backwards)
         feat_str = ','.join(str(feature) for feature in self.feature_set_backwards)
         prev = self.best_features[1]
         self.best_features[1] = max(self.best_features[1], precision[precision_index[-1]])
@@ -184,40 +155,20 @@ class Feature_Selection:
             self.best_features[0] = feat_str
         if precision[precision_index[-1]] < self.best_features[1]:
             print("\n(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)")
-        print("\nFeature set {" + feat_str + "} was best, accuracy is " + str(precision[precision_index[-1]]) + "%\n")
+        print("\nFeature set {" + feat_str + "} was best, accuracy is " + str(precision[precision_index[-1]]*100) + "%\n")
         ### Referenced Pandas library to understand how to drop column https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop.html
         self.feature_subset_backwards = self.feature_subset_backwards.drop(columns=[feature_name[precision_index[-1]]])
-        # print(self.feature_subset_backwards)
         self.dataset_backwards = self.dataset_backwards.drop(columns=[feature_name[precision_index[-1]]])
-        # print(self.dataset_backwards)
         self.greedy_backward()
         pass
     
 
-### Start by splitting my data into train and test set
-data = {'label': [2, 1, 2, 1, 2],
-        'feature_1': [1, 10, 2, 11, 1],
-        'feature_2': [ 2, 11, 3, 12, 2],
-        'feature_3': [ 15, 15, 15, 15, 15],}
-df = pd.DataFrame(data)
-# print(df)
-# df = small_data_19.head(5)
-# df = small_data_19
-# df = large_data_6
-train_data = df.sample(frac = 0.8, random_state = 4)
-train_data.reset_index(drop=True, inplace=True)
-# print(train_data)
-test_data = df.drop(train_data.index)
-test_data.reset_index(drop=True, inplace=True)
-# print(test_data)
-
-# Asks the user for puzzle_size
 print("Welcome to KNN Feature Selection Algorithm!\n")
 print("Please select the file you would like to test: ")
 print("1. Sample Small 19\n" + 
         "2. Assigned Small 21\n" +
         "3. Sample Large 6\n" + 
-        "4. Assigned Larg 13e\n")
+        "4. Assigned Large 13\n")
 file = input("Your selection: ")
 file = int(file)
 if file == 1:
@@ -240,28 +191,50 @@ algo = int(algo)
 print("This dataset has " + str(df.shape[1]-1) + " features (not including the class attribute), with " + str(df.shape[0]) + " instances.\n")
 correct = 0
 feature = df.to_numpy()
-for cfv in range(int((df.shape[1]-1)/1)):
-        train_data = np.delete(feature, cfv, axis=0)
-        test_data = feature[cfv]
 
-        knn = KNN_Classifier(train_data, test_data, 1)
-        knn.train()
-        if knn.pred_class()[0] == test_data[0]:
-                correct += 1
-print("Running KNN with all " + str(df.shape[1]-1) + " åfeatures, using \"leave-one-out\" evaluation, I get an accuracy of " + str(correct/int((df.shape[1]-1)/1)) + "%\n")
+if algo == 1:     
+        pred_classes = feature[:, 0]
+        classes, counts = np.unique(pred_classes, return_counts=True)
+        if counts[1] > counts[0]:
+                print("Running KNN with no features, I get an accuracy of " + str(counts[1]/(counts[0]+counts[1])*100) + "%\n")
+        else:
+                print("Running KNN with no features, I get an accuracy of " + str(counts[0]/(counts[0]+counts[1])*100) + "%\n")
+
+if algo == 2:     
+        for cfv in range(int(len(feature))):
+                train_data = np.delete(feature, cfv, axis=0)
+                test_data = feature[cfv]
+
+                knn = KNN_Classifier(train_data, test_data, 1)
+                knn.train()
+                if knn.pred_class()[0] == test_data[0]:
+                        correct += 1
+        print("Running KNN with all " + str(df.shape[1]-1) + " features, using \"leave-one-out\" evaluation, I get an accuracy of " + str(correct/len(feature)*100)+ "%\n")
 
 feat_select = Feature_Selection(df, 1)
 print("Beginning search.\n")
 if algo == 1:
+        start = time.time()
         feat_select.greedy_forward()
         feat_select.print_best_features()
+        end = time.time()
+        print("Elapsed (with compilation) = %s" % (end - start))
 elif algo == 2:
+        start = time.time()
         feat_select.greedy_backward()
         feat_select.print_best_features()
+        end = time.time()
+        print("Elapsed (after compilation) = %s" % (end - start))
 elif algo == 3:
+        start = time.time()
         print("Starting with Forward Selection.\n")
         feat_select.greedy_forward()
         feat_select.print_best_features()
+        end = time.time()
+        print("Elapsed (after compilation) = %s" % (end - start))
+        start = time.time()
         print("Starting Backward Elimination.\n")
         feat_select.greedy_backward()
         feat_select.print_best_features()
+        end = time.time()
+        print("Elapsed (after compilation) = %s" % (end - start))

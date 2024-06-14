@@ -1,0 +1,1491 @@
+/Users/kevintu/Documents/Python/CS205/CS_205/KNN.py:8: ParserWarning: Falling back to the 'python' engine because the 'c' engine does not support regex separators (separators > 1 char and different from '\s+' are interpreted as regex); you can avoid this warning by specifying engine='python'.
+  small_data_19 = pd.read_csv('/Users/kevintu/Documents/Python/CS205/CS_205/CS205_small_Data__19.txt', sep='  ', header=None)
+/Users/kevintu/Documents/Python/CS205/CS_205/KNN.py:13: ParserWarning: Falling back to the 'python' engine because the 'c' engine does not support regex separators (separators > 1 char and different from '\s+' are interpreted as regex); you can avoid this warning by specifying engine='python'.
+  large_data_6 = pd.read_csv('/Users/kevintu/Documents/Python/CS205/CS_205/CS205_large_Data__6.txt', sep='  ', header=None)
+/Users/kevintu/Documents/Python/CS205/CS_205/KNN.py:19: ParserWarning: Falling back to the 'python' engine because the 'c' engine does not support regex separators (separators > 1 char and different from '\s+' are interpreted as regex); you can avoid this warning by specifying engine='python'.
+  small_data_21 = pd.read_csv('/Users/kevintu/Documents/Python/CS205/CS_205/CS205_small_Data__21.txt', sep='  ', header=None)
+/Users/kevintu/Documents/Python/CS205/CS_205/KNN.py:24: ParserWarning: Falling back to the 'python' engine because the 'c' engine does not support regex separators (separators > 1 char and different from '\s+' are interpreted as regex); you can avoid this warning by specifying engine='python'.
+  large_data_13 = pd.read_csv('/Users/kevintu/Documents/Python/CS205/CS_205/CS205_large_Data__13.txt', sep='  ', header=None)
+Welcome to KNN Feature Selection Algorithm!
+
+Please select the file you would like to test: 
+1. Sample Small 19
+2. Assigned Small 21
+3. Sample Large 6
+4. Assigned Large 13
+
+Your selection: Please select the algorithm you would like to run: 
+
+1. Forward Selection
+2. Backward Elimination
+3. Both
+
+Your selection: This dataset has 50 features (not including the class attribute), with 5000 instances.
+
+Running KNN with all 50 features, using "leave-one-out" evaluation, I get an accuracy of 0.7044%
+
+Beginning search.
+
+	Removing feature(s) {1} accuracy is 0.7052%
+	Removing feature(s) {2} accuracy is 0.7024%
+	Removing feature(s) {3} accuracy is 0.7034%
+	Removing feature(s) {4} accuracy is 0.7082%
+	Removing feature(s) {5} accuracy is 0.7046%
+	Removing feature(s) {6} accuracy is 0.7082%
+	Removing feature(s) {7} accuracy is 0.7024%
+	Removing feature(s) {8} accuracy is 0.711%
+	Removing feature(s) {9} accuracy is 0.7096%
+	Removing feature(s) {10} accuracy is 0.7036%
+	Removing feature(s) {11} accuracy is 0.7118%
+	Removing feature(s) {12} accuracy is 0.702%
+	Removing feature(s) {13} accuracy is 0.704%
+	Removing feature(s) {14} accuracy is 0.7064%
+	Removing feature(s) {15} accuracy is 0.7012%
+	Removing feature(s) {16} accuracy is 0.701%
+	Removing feature(s) {17} accuracy is 0.7042%
+	Removing feature(s) {18} accuracy is 0.7094%
+	Removing feature(s) {19} accuracy is 0.7052%
+	Removing feature(s) {20} accuracy is 0.7004%
+	Removing feature(s) {21} accuracy is 0.7026%
+	Removing feature(s) {22} accuracy is 0.707%
+	Removing feature(s) {23} accuracy is 0.71%
+	Removing feature(s) {24} accuracy is 0.6984%
+	Removing feature(s) {25} accuracy is 0.7014%
+	Removing feature(s) {26} accuracy is 0.7012%
+	Removing feature(s) {27} accuracy is 0.7038%
+	Removing feature(s) {28} accuracy is 0.6996%
+	Removing feature(s) {29} accuracy is 0.7024%
+	Removing feature(s) {30} accuracy is 0.7016%
+	Removing feature(s) {31} accuracy is 0.7056%
+	Removing feature(s) {32} accuracy is 0.6962%
+	Removing feature(s) {33} accuracy is 0.706%
+	Removing feature(s) {34} accuracy is 0.7004%
+	Removing feature(s) {35} accuracy is 0.709%
+	Removing feature(s) {36} accuracy is 0.701%
+	Removing feature(s) {37} accuracy is 0.707%
+	Removing feature(s) {38} accuracy is 0.696%
+	Removing feature(s) {39} accuracy is 0.7042%
+	Removing feature(s) {40} accuracy is 0.7044%
+	Removing feature(s) {41} accuracy is 0.7016%
+	Removing feature(s) {42} accuracy is 0.7078%
+	Removing feature(s) {43} accuracy is 0.7004%
+	Removing feature(s) {44} accuracy is 0.7%
+	Removing feature(s) {45} accuracy is 0.7062%
+	Removing feature(s) {46} accuracy is 0.7074%
+	Removing feature(s) {47} accuracy is 0.7038%
+	Removing feature(s) {48} accuracy is 0.6998%
+	Removing feature(s) {49} accuracy is 0.7018%
+	Removing feature(s) {50} accuracy is 0.7102%
+
+Feature set {11} was best, accuracy is 0.7118%
+
+	Removing feature(s) {11,1} accuracy is 0.7104%
+	Removing feature(s) {11,2} accuracy is 0.703%
+	Removing feature(s) {11,3} accuracy is 0.708%
+	Removing feature(s) {11,4} accuracy is 0.712%
+	Removing feature(s) {11,5} accuracy is 0.7084%
+	Removing feature(s) {11,6} accuracy is 0.705%
+	Removing feature(s) {11,7} accuracy is 0.711%
+	Removing feature(s) {11,8} accuracy is 0.7096%
+	Removing feature(s) {11,9} accuracy is 0.7094%
+	Removing feature(s) {11,10} accuracy is 0.7086%
+	Removing feature(s) {11,12} accuracy is 0.7022%
+	Removing feature(s) {11,13} accuracy is 0.7114%
+	Removing feature(s) {11,14} accuracy is 0.7086%
+	Removing feature(s) {11,15} accuracy is 0.7114%
+	Removing feature(s) {11,16} accuracy is 0.705%
+	Removing feature(s) {11,17} accuracy is 0.7114%
+	Removing feature(s) {11,18} accuracy is 0.7168%
+	Removing feature(s) {11,19} accuracy is 0.7118%
+	Removing feature(s) {11,20} accuracy is 0.7106%
+	Removing feature(s) {11,21} accuracy is 0.7092%
+	Removing feature(s) {11,22} accuracy is 0.7142%
+	Removing feature(s) {11,23} accuracy is 0.7066%
+	Removing feature(s) {11,24} accuracy is 0.7032%
+	Removing feature(s) {11,25} accuracy is 0.7002%
+	Removing feature(s) {11,26} accuracy is 0.7126%
+	Removing feature(s) {11,27} accuracy is 0.7108%
+	Removing feature(s) {11,28} accuracy is 0.6988%
+	Removing feature(s) {11,29} accuracy is 0.7096%
+	Removing feature(s) {11,30} accuracy is 0.7114%
+	Removing feature(s) {11,31} accuracy is 0.717%
+	Removing feature(s) {11,32} accuracy is 0.704%
+	Removing feature(s) {11,33} accuracy is 0.7094%
+	Removing feature(s) {11,34} accuracy is 0.7082%
+	Removing feature(s) {11,35} accuracy is 0.7158%
+	Removing feature(s) {11,36} accuracy is 0.703%
+	Removing feature(s) {11,37} accuracy is 0.7144%
+	Removing feature(s) {11,38} accuracy is 0.702%
+	Removing feature(s) {11,39} accuracy is 0.711%
+	Removing feature(s) {11,40} accuracy is 0.7084%
+	Removing feature(s) {11,41} accuracy is 0.7084%
+	Removing feature(s) {11,42} accuracy is 0.7058%
+	Removing feature(s) {11,43} accuracy is 0.7106%
+	Removing feature(s) {11,44} accuracy is 0.7084%
+	Removing feature(s) {11,45} accuracy is 0.7108%
+	Removing feature(s) {11,46} accuracy is 0.7112%
+	Removing feature(s) {11,47} accuracy is 0.7042%
+	Removing feature(s) {11,48} accuracy is 0.7028%
+	Removing feature(s) {11,49} accuracy is 0.7068%
+	Removing feature(s) {11,50} accuracy is 0.7144%
+
+Feature set {11,31} was best, accuracy is 0.717%
+
+	Removing feature(s) {11,31,1} accuracy is 0.719%
+	Removing feature(s) {11,31,2} accuracy is 0.7136%
+	Removing feature(s) {11,31,3} accuracy is 0.7172%
+	Removing feature(s) {11,31,4} accuracy is 0.7146%
+	Removing feature(s) {11,31,5} accuracy is 0.7166%
+	Removing feature(s) {11,31,6} accuracy is 0.7204%
+	Removing feature(s) {11,31,7} accuracy is 0.7152%
+	Removing feature(s) {11,31,8} accuracy is 0.721%
+	Removing feature(s) {11,31,9} accuracy is 0.721%
+	Removing feature(s) {11,31,10} accuracy is 0.7138%
+	Removing feature(s) {11,31,12} accuracy is 0.7114%
+	Removing feature(s) {11,31,13} accuracy is 0.7158%
+	Removing feature(s) {11,31,14} accuracy is 0.7176%
+	Removing feature(s) {11,31,15} accuracy is 0.715%
+	Removing feature(s) {11,31,16} accuracy is 0.7072%
+	Removing feature(s) {11,31,17} accuracy is 0.7166%
+	Removing feature(s) {11,31,18} accuracy is 0.721%
+	Removing feature(s) {11,31,19} accuracy is 0.7152%
+	Removing feature(s) {11,31,20} accuracy is 0.7154%
+	Removing feature(s) {11,31,21} accuracy is 0.7168%
+	Removing feature(s) {11,31,22} accuracy is 0.7168%
+	Removing feature(s) {11,31,23} accuracy is 0.7124%
+	Removing feature(s) {11,31,24} accuracy is 0.7108%
+	Removing feature(s) {11,31,25} accuracy is 0.7112%
+	Removing feature(s) {11,31,26} accuracy is 0.7172%
+	Removing feature(s) {11,31,27} accuracy is 0.7124%
+	Removing feature(s) {11,31,28} accuracy is 0.7088%
+	Removing feature(s) {11,31,29} accuracy is 0.7168%
+	Removing feature(s) {11,31,30} accuracy is 0.7148%
+	Removing feature(s) {11,31,32} accuracy is 0.7094%
+	Removing feature(s) {11,31,33} accuracy is 0.716%
+	Removing feature(s) {11,31,34} accuracy is 0.7068%
+	Removing feature(s) {11,31,35} accuracy is 0.7204%
+	Removing feature(s) {11,31,36} accuracy is 0.7134%
+	Removing feature(s) {11,31,37} accuracy is 0.7186%
+	Removing feature(s) {11,31,38} accuracy is 0.7114%
+	Removing feature(s) {11,31,39} accuracy is 0.7208%
+	Removing feature(s) {11,31,40} accuracy is 0.7104%
+	Removing feature(s) {11,31,41} accuracy is 0.7162%
+	Removing feature(s) {11,31,42} accuracy is 0.7156%
+	Removing feature(s) {11,31,43} accuracy is 0.7136%
+	Removing feature(s) {11,31,44} accuracy is 0.7128%
+	Removing feature(s) {11,31,45} accuracy is 0.7168%
+	Removing feature(s) {11,31,46} accuracy is 0.7194%
+	Removing feature(s) {11,31,47} accuracy is 0.7114%
+	Removing feature(s) {11,31,48} accuracy is 0.717%
+	Removing feature(s) {11,31,49} accuracy is 0.7092%
+	Removing feature(s) {11,31,50} accuracy is 0.7224%
+
+Feature set {11,31,50} was best, accuracy is 0.7224%
+
+	Removing feature(s) {11,31,50,1} accuracy is 0.7188%
+	Removing feature(s) {11,31,50,2} accuracy is 0.7156%
+	Removing feature(s) {11,31,50,3} accuracy is 0.716%
+	Removing feature(s) {11,31,50,4} accuracy is 0.7184%
+	Removing feature(s) {11,31,50,5} accuracy is 0.7204%
+	Removing feature(s) {11,31,50,6} accuracy is 0.7164%
+	Removing feature(s) {11,31,50,7} accuracy is 0.7192%
+	Removing feature(s) {11,31,50,8} accuracy is 0.7258%
+	Removing feature(s) {11,31,50,9} accuracy is 0.7208%
+	Removing feature(s) {11,31,50,10} accuracy is 0.714%
+	Removing feature(s) {11,31,50,12} accuracy is 0.7194%
+	Removing feature(s) {11,31,50,13} accuracy is 0.7192%
+	Removing feature(s) {11,31,50,14} accuracy is 0.7172%
+	Removing feature(s) {11,31,50,15} accuracy is 0.718%
+	Removing feature(s) {11,31,50,16} accuracy is 0.717%
+	Removing feature(s) {11,31,50,17} accuracy is 0.717%
+	Removing feature(s) {11,31,50,18} accuracy is 0.721%
+	Removing feature(s) {11,31,50,19} accuracy is 0.7174%
+	Removing feature(s) {11,31,50,20} accuracy is 0.716%
+	Removing feature(s) {11,31,50,21} accuracy is 0.7202%
+	Removing feature(s) {11,31,50,22} accuracy is 0.7172%
+	Removing feature(s) {11,31,50,23} accuracy is 0.7202%
+	Removing feature(s) {11,31,50,24} accuracy is 0.7148%
+	Removing feature(s) {11,31,50,25} accuracy is 0.7106%
+	Removing feature(s) {11,31,50,26} accuracy is 0.7232%
+	Removing feature(s) {11,31,50,27} accuracy is 0.7142%
+	Removing feature(s) {11,31,50,28} accuracy is 0.715%
+	Removing feature(s) {11,31,50,29} accuracy is 0.7182%
+	Removing feature(s) {11,31,50,30} accuracy is 0.7194%
+	Removing feature(s) {11,31,50,32} accuracy is 0.7174%
+	Removing feature(s) {11,31,50,33} accuracy is 0.725%
+	Removing feature(s) {11,31,50,34} accuracy is 0.7106%
+	Removing feature(s) {11,31,50,35} accuracy is 0.7224%
+	Removing feature(s) {11,31,50,36} accuracy is 0.7166%
+	Removing feature(s) {11,31,50,37} accuracy is 0.718%
+	Removing feature(s) {11,31,50,38} accuracy is 0.7086%
+	Removing feature(s) {11,31,50,39} accuracy is 0.7204%
+	Removing feature(s) {11,31,50,40} accuracy is 0.7148%
+	Removing feature(s) {11,31,50,41} accuracy is 0.7234%
+	Removing feature(s) {11,31,50,42} accuracy is 0.7138%
+	Removing feature(s) {11,31,50,43} accuracy is 0.7196%
+	Removing feature(s) {11,31,50,44} accuracy is 0.7166%
+	Removing feature(s) {11,31,50,45} accuracy is 0.7192%
+	Removing feature(s) {11,31,50,46} accuracy is 0.7194%
+	Removing feature(s) {11,31,50,47} accuracy is 0.7156%
+	Removing feature(s) {11,31,50,48} accuracy is 0.7202%
+	Removing feature(s) {11,31,50,49} accuracy is 0.7142%
+
+Feature set {11,31,50,8} was best, accuracy is 0.7258%
+
+	Removing feature(s) {11,31,50,8,1} accuracy is 0.7246%
+	Removing feature(s) {11,31,50,8,2} accuracy is 0.7188%
+	Removing feature(s) {11,31,50,8,3} accuracy is 0.7204%
+	Removing feature(s) {11,31,50,8,4} accuracy is 0.7258%
+	Removing feature(s) {11,31,50,8,5} accuracy is 0.7226%
+	Removing feature(s) {11,31,50,8,6} accuracy is 0.7246%
+	Removing feature(s) {11,31,50,8,7} accuracy is 0.7254%
+	Removing feature(s) {11,31,50,8,9} accuracy is 0.7264%
+	Removing feature(s) {11,31,50,8,10} accuracy is 0.7216%
+	Removing feature(s) {11,31,50,8,12} accuracy is 0.7246%
+	Removing feature(s) {11,31,50,8,13} accuracy is 0.7272%
+	Removing feature(s) {11,31,50,8,14} accuracy is 0.7198%
+	Removing feature(s) {11,31,50,8,15} accuracy is 0.7232%
+	Removing feature(s) {11,31,50,8,16} accuracy is 0.717%
+	Removing feature(s) {11,31,50,8,17} accuracy is 0.7216%
+	Removing feature(s) {11,31,50,8,18} accuracy is 0.7298%
+	Removing feature(s) {11,31,50,8,19} accuracy is 0.7234%
+	Removing feature(s) {11,31,50,8,20} accuracy is 0.7222%
+	Removing feature(s) {11,31,50,8,21} accuracy is 0.722%
+	Removing feature(s) {11,31,50,8,22} accuracy is 0.7224%
+	Removing feature(s) {11,31,50,8,23} accuracy is 0.7236%
+	Removing feature(s) {11,31,50,8,24} accuracy is 0.7194%
+	Removing feature(s) {11,31,50,8,25} accuracy is 0.7142%
+	Removing feature(s) {11,31,50,8,26} accuracy is 0.7242%
+	Removing feature(s) {11,31,50,8,27} accuracy is 0.723%
+	Removing feature(s) {11,31,50,8,28} accuracy is 0.7156%
+	Removing feature(s) {11,31,50,8,29} accuracy is 0.7242%
+	Removing feature(s) {11,31,50,8,30} accuracy is 0.7222%
+	Removing feature(s) {11,31,50,8,32} accuracy is 0.725%
+	Removing feature(s) {11,31,50,8,33} accuracy is 0.7276%
+	Removing feature(s) {11,31,50,8,34} accuracy is 0.719%
+	Removing feature(s) {11,31,50,8,35} accuracy is 0.7236%
+	Removing feature(s) {11,31,50,8,36} accuracy is 0.7218%
+	Removing feature(s) {11,31,50,8,37} accuracy is 0.7242%
+	Removing feature(s) {11,31,50,8,38} accuracy is 0.7206%
+	Removing feature(s) {11,31,50,8,39} accuracy is 0.719%
+	Removing feature(s) {11,31,50,8,40} accuracy is 0.7212%
+	Removing feature(s) {11,31,50,8,41} accuracy is 0.723%
+	Removing feature(s) {11,31,50,8,42} accuracy is 0.7218%
+	Removing feature(s) {11,31,50,8,43} accuracy is 0.7202%
+	Removing feature(s) {11,31,50,8,44} accuracy is 0.7256%
+	Removing feature(s) {11,31,50,8,45} accuracy is 0.7214%
+	Removing feature(s) {11,31,50,8,46} accuracy is 0.722%
+	Removing feature(s) {11,31,50,8,47} accuracy is 0.7218%
+	Removing feature(s) {11,31,50,8,48} accuracy is 0.7194%
+	Removing feature(s) {11,31,50,8,49} accuracy is 0.7222%
+
+Feature set {11,31,50,8,18} was best, accuracy is 0.7298%
+
+	Removing feature(s) {11,31,50,8,18,1} accuracy is 0.7278%
+	Removing feature(s) {11,31,50,8,18,2} accuracy is 0.716%
+	Removing feature(s) {11,31,50,8,18,3} accuracy is 0.7238%
+	Removing feature(s) {11,31,50,8,18,4} accuracy is 0.7224%
+	Removing feature(s) {11,31,50,8,18,5} accuracy is 0.7266%
+	Removing feature(s) {11,31,50,8,18,6} accuracy is 0.7246%
+	Removing feature(s) {11,31,50,8,18,7} accuracy is 0.7264%
+	Removing feature(s) {11,31,50,8,18,9} accuracy is 0.728%
+	Removing feature(s) {11,31,50,8,18,10} accuracy is 0.7218%
+	Removing feature(s) {11,31,50,8,18,12} accuracy is 0.7256%
+	Removing feature(s) {11,31,50,8,18,13} accuracy is 0.7252%
+	Removing feature(s) {11,31,50,8,18,14} accuracy is 0.7228%
+	Removing feature(s) {11,31,50,8,18,15} accuracy is 0.725%
+	Removing feature(s) {11,31,50,8,18,16} accuracy is 0.716%
+	Removing feature(s) {11,31,50,8,18,17} accuracy is 0.729%
+	Removing feature(s) {11,31,50,8,18,19} accuracy is 0.7274%
+	Removing feature(s) {11,31,50,8,18,20} accuracy is 0.725%
+	Removing feature(s) {11,31,50,8,18,21} accuracy is 0.721%
+	Removing feature(s) {11,31,50,8,18,22} accuracy is 0.7282%
+	Removing feature(s) {11,31,50,8,18,23} accuracy is 0.7258%
+	Removing feature(s) {11,31,50,8,18,24} accuracy is 0.7246%
+	Removing feature(s) {11,31,50,8,18,25} accuracy is 0.7164%
+	Removing feature(s) {11,31,50,8,18,26} accuracy is 0.7252%
+	Removing feature(s) {11,31,50,8,18,27} accuracy is 0.7284%
+	Removing feature(s) {11,31,50,8,18,28} accuracy is 0.7254%
+	Removing feature(s) {11,31,50,8,18,29} accuracy is 0.7204%
+	Removing feature(s) {11,31,50,8,18,30} accuracy is 0.723%
+	Removing feature(s) {11,31,50,8,18,32} accuracy is 0.7226%
+	Removing feature(s) {11,31,50,8,18,33} accuracy is 0.7312%
+	Removing feature(s) {11,31,50,8,18,34} accuracy is 0.7144%
+	Removing feature(s) {11,31,50,8,18,35} accuracy is 0.7284%
+	Removing feature(s) {11,31,50,8,18,36} accuracy is 0.7208%
+	Removing feature(s) {11,31,50,8,18,37} accuracy is 0.7296%
+	Removing feature(s) {11,31,50,8,18,38} accuracy is 0.7234%
+	Removing feature(s) {11,31,50,8,18,39} accuracy is 0.7254%
+	Removing feature(s) {11,31,50,8,18,40} accuracy is 0.7208%
+	Removing feature(s) {11,31,50,8,18,41} accuracy is 0.7202%
+	Removing feature(s) {11,31,50,8,18,42} accuracy is 0.7248%
+	Removing feature(s) {11,31,50,8,18,43} accuracy is 0.722%
+	Removing feature(s) {11,31,50,8,18,44} accuracy is 0.7276%
+	Removing feature(s) {11,31,50,8,18,45} accuracy is 0.7224%
+	Removing feature(s) {11,31,50,8,18,46} accuracy is 0.7292%
+	Removing feature(s) {11,31,50,8,18,47} accuracy is 0.7246%
+	Removing feature(s) {11,31,50,8,18,48} accuracy is 0.7274%
+	Removing feature(s) {11,31,50,8,18,49} accuracy is 0.7268%
+
+Feature set {11,31,50,8,18,33} was best, accuracy is 0.7312%
+
+	Removing feature(s) {11,31,50,8,18,33,1} accuracy is 0.7304%
+	Removing feature(s) {11,31,50,8,18,33,2} accuracy is 0.7188%
+	Removing feature(s) {11,31,50,8,18,33,3} accuracy is 0.7218%
+	Removing feature(s) {11,31,50,8,18,33,4} accuracy is 0.724%
+	Removing feature(s) {11,31,50,8,18,33,5} accuracy is 0.7324%
+	Removing feature(s) {11,31,50,8,18,33,6} accuracy is 0.7308%
+	Removing feature(s) {11,31,50,8,18,33,7} accuracy is 0.7298%
+	Removing feature(s) {11,31,50,8,18,33,9} accuracy is 0.7284%
+	Removing feature(s) {11,31,50,8,18,33,10} accuracy is 0.721%
+	Removing feature(s) {11,31,50,8,18,33,12} accuracy is 0.7312%
+	Removing feature(s) {11,31,50,8,18,33,13} accuracy is 0.7254%
+	Removing feature(s) {11,31,50,8,18,33,14} accuracy is 0.7248%
+	Removing feature(s) {11,31,50,8,18,33,15} accuracy is 0.7278%
+	Removing feature(s) {11,31,50,8,18,33,16} accuracy is 0.7206%
+	Removing feature(s) {11,31,50,8,18,33,17} accuracy is 0.7296%
+	Removing feature(s) {11,31,50,8,18,33,19} accuracy is 0.7232%
+	Removing feature(s) {11,31,50,8,18,33,20} accuracy is 0.723%
+	Removing feature(s) {11,31,50,8,18,33,21} accuracy is 0.7206%
+	Removing feature(s) {11,31,50,8,18,33,22} accuracy is 0.7268%
+	Removing feature(s) {11,31,50,8,18,33,23} accuracy is 0.729%
+	Removing feature(s) {11,31,50,8,18,33,24} accuracy is 0.7168%
+	Removing feature(s) {11,31,50,8,18,33,25} accuracy is 0.7174%
+	Removing feature(s) {11,31,50,8,18,33,26} accuracy is 0.7272%
+	Removing feature(s) {11,31,50,8,18,33,27} accuracy is 0.7308%
+	Removing feature(s) {11,31,50,8,18,33,28} accuracy is 0.724%
+	Removing feature(s) {11,31,50,8,18,33,29} accuracy is 0.7236%
+	Removing feature(s) {11,31,50,8,18,33,30} accuracy is 0.7244%
+	Removing feature(s) {11,31,50,8,18,33,32} accuracy is 0.7244%
+	Removing feature(s) {11,31,50,8,18,33,34} accuracy is 0.7188%
+	Removing feature(s) {11,31,50,8,18,33,35} accuracy is 0.733%
+	Removing feature(s) {11,31,50,8,18,33,36} accuracy is 0.7266%
+	Removing feature(s) {11,31,50,8,18,33,37} accuracy is 0.7268%
+	Removing feature(s) {11,31,50,8,18,33,38} accuracy is 0.7224%
+	Removing feature(s) {11,31,50,8,18,33,39} accuracy is 0.7236%
+	Removing feature(s) {11,31,50,8,18,33,40} accuracy is 0.7272%
+	Removing feature(s) {11,31,50,8,18,33,41} accuracy is 0.7264%
+	Removing feature(s) {11,31,50,8,18,33,42} accuracy is 0.722%
+	Removing feature(s) {11,31,50,8,18,33,43} accuracy is 0.7252%
+	Removing feature(s) {11,31,50,8,18,33,44} accuracy is 0.7336%
+	Removing feature(s) {11,31,50,8,18,33,45} accuracy is 0.723%
+	Removing feature(s) {11,31,50,8,18,33,46} accuracy is 0.7294%
+	Removing feature(s) {11,31,50,8,18,33,47} accuracy is 0.727%
+	Removing feature(s) {11,31,50,8,18,33,48} accuracy is 0.7272%
+	Removing feature(s) {11,31,50,8,18,33,49} accuracy is 0.7236%
+
+Feature set {11,31,50,8,18,33,44} was best, accuracy is 0.7336%
+
+	Removing feature(s) {11,31,50,8,18,33,44,1} accuracy is 0.729%
+	Removing feature(s) {11,31,50,8,18,33,44,2} accuracy is 0.7204%
+	Removing feature(s) {11,31,50,8,18,33,44,3} accuracy is 0.7252%
+	Removing feature(s) {11,31,50,8,18,33,44,4} accuracy is 0.7278%
+	Removing feature(s) {11,31,50,8,18,33,44,5} accuracy is 0.7306%
+	Removing feature(s) {11,31,50,8,18,33,44,6} accuracy is 0.7314%
+	Removing feature(s) {11,31,50,8,18,33,44,7} accuracy is 0.7322%
+	Removing feature(s) {11,31,50,8,18,33,44,9} accuracy is 0.729%
+	Removing feature(s) {11,31,50,8,18,33,44,10} accuracy is 0.7202%
+	Removing feature(s) {11,31,50,8,18,33,44,12} accuracy is 0.7272%
+	Removing feature(s) {11,31,50,8,18,33,44,13} accuracy is 0.7286%
+	Removing feature(s) {11,31,50,8,18,33,44,14} accuracy is 0.7312%
+	Removing feature(s) {11,31,50,8,18,33,44,15} accuracy is 0.7294%
+	Removing feature(s) {11,31,50,8,18,33,44,16} accuracy is 0.7244%
+	Removing feature(s) {11,31,50,8,18,33,44,17} accuracy is 0.727%
+	Removing feature(s) {11,31,50,8,18,33,44,19} accuracy is 0.726%
+	Removing feature(s) {11,31,50,8,18,33,44,20} accuracy is 0.7194%
+	Removing feature(s) {11,31,50,8,18,33,44,21} accuracy is 0.725%
+	Removing feature(s) {11,31,50,8,18,33,44,22} accuracy is 0.7278%
+	Removing feature(s) {11,31,50,8,18,33,44,23} accuracy is 0.7276%
+	Removing feature(s) {11,31,50,8,18,33,44,24} accuracy is 0.7256%
+	Removing feature(s) {11,31,50,8,18,33,44,25} accuracy is 0.7188%
+	Removing feature(s) {11,31,50,8,18,33,44,26} accuracy is 0.7236%
+	Removing feature(s) {11,31,50,8,18,33,44,27} accuracy is 0.7392%
+	Removing feature(s) {11,31,50,8,18,33,44,28} accuracy is 0.725%
+	Removing feature(s) {11,31,50,8,18,33,44,29} accuracy is 0.7296%
+	Removing feature(s) {11,31,50,8,18,33,44,30} accuracy is 0.731%
+	Removing feature(s) {11,31,50,8,18,33,44,32} accuracy is 0.7216%
+	Removing feature(s) {11,31,50,8,18,33,44,34} accuracy is 0.7236%
+	Removing feature(s) {11,31,50,8,18,33,44,35} accuracy is 0.7272%
+	Removing feature(s) {11,31,50,8,18,33,44,36} accuracy is 0.7294%
+	Removing feature(s) {11,31,50,8,18,33,44,37} accuracy is 0.7312%
+	Removing feature(s) {11,31,50,8,18,33,44,38} accuracy is 0.73%
+	Removing feature(s) {11,31,50,8,18,33,44,39} accuracy is 0.7298%
+	Removing feature(s) {11,31,50,8,18,33,44,40} accuracy is 0.7228%
+	Removing feature(s) {11,31,50,8,18,33,44,41} accuracy is 0.7288%
+	Removing feature(s) {11,31,50,8,18,33,44,42} accuracy is 0.7238%
+	Removing feature(s) {11,31,50,8,18,33,44,43} accuracy is 0.7302%
+	Removing feature(s) {11,31,50,8,18,33,44,45} accuracy is 0.7284%
+	Removing feature(s) {11,31,50,8,18,33,44,46} accuracy is 0.7276%
+	Removing feature(s) {11,31,50,8,18,33,44,47} accuracy is 0.7288%
+	Removing feature(s) {11,31,50,8,18,33,44,48} accuracy is 0.7284%
+	Removing feature(s) {11,31,50,8,18,33,44,49} accuracy is 0.726%
+
+Feature set {11,31,50,8,18,33,44,27} was best, accuracy is 0.7392%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,1} accuracy is 0.73%
+	Removing feature(s) {11,31,50,8,18,33,44,27,2} accuracy is 0.7288%
+	Removing feature(s) {11,31,50,8,18,33,44,27,3} accuracy is 0.7318%
+	Removing feature(s) {11,31,50,8,18,33,44,27,4} accuracy is 0.7316%
+	Removing feature(s) {11,31,50,8,18,33,44,27,5} accuracy is 0.7294%
+	Removing feature(s) {11,31,50,8,18,33,44,27,6} accuracy is 0.7346%
+	Removing feature(s) {11,31,50,8,18,33,44,27,7} accuracy is 0.7358%
+	Removing feature(s) {11,31,50,8,18,33,44,27,9} accuracy is 0.729%
+	Removing feature(s) {11,31,50,8,18,33,44,27,10} accuracy is 0.7244%
+	Removing feature(s) {11,31,50,8,18,33,44,27,12} accuracy is 0.733%
+	Removing feature(s) {11,31,50,8,18,33,44,27,13} accuracy is 0.7318%
+	Removing feature(s) {11,31,50,8,18,33,44,27,14} accuracy is 0.733%
+	Removing feature(s) {11,31,50,8,18,33,44,27,15} accuracy is 0.7334%
+	Removing feature(s) {11,31,50,8,18,33,44,27,16} accuracy is 0.7244%
+	Removing feature(s) {11,31,50,8,18,33,44,27,17} accuracy is 0.7366%
+	Removing feature(s) {11,31,50,8,18,33,44,27,19} accuracy is 0.731%
+	Removing feature(s) {11,31,50,8,18,33,44,27,20} accuracy is 0.7252%
+	Removing feature(s) {11,31,50,8,18,33,44,27,21} accuracy is 0.7236%
+	Removing feature(s) {11,31,50,8,18,33,44,27,22} accuracy is 0.7296%
+	Removing feature(s) {11,31,50,8,18,33,44,27,23} accuracy is 0.7318%
+	Removing feature(s) {11,31,50,8,18,33,44,27,24} accuracy is 0.7302%
+	Removing feature(s) {11,31,50,8,18,33,44,27,25} accuracy is 0.7268%
+	Removing feature(s) {11,31,50,8,18,33,44,27,26} accuracy is 0.7298%
+	Removing feature(s) {11,31,50,8,18,33,44,27,28} accuracy is 0.7312%
+	Removing feature(s) {11,31,50,8,18,33,44,27,29} accuracy is 0.734%
+	Removing feature(s) {11,31,50,8,18,33,44,27,30} accuracy is 0.7306%
+	Removing feature(s) {11,31,50,8,18,33,44,27,32} accuracy is 0.7276%
+	Removing feature(s) {11,31,50,8,18,33,44,27,34} accuracy is 0.7272%
+	Removing feature(s) {11,31,50,8,18,33,44,27,35} accuracy is 0.7316%
+	Removing feature(s) {11,31,50,8,18,33,44,27,36} accuracy is 0.7296%
+	Removing feature(s) {11,31,50,8,18,33,44,27,37} accuracy is 0.7306%
+	Removing feature(s) {11,31,50,8,18,33,44,27,38} accuracy is 0.728%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39} accuracy is 0.7392%
+	Removing feature(s) {11,31,50,8,18,33,44,27,40} accuracy is 0.7318%
+	Removing feature(s) {11,31,50,8,18,33,44,27,41} accuracy is 0.7326%
+	Removing feature(s) {11,31,50,8,18,33,44,27,42} accuracy is 0.7304%
+	Removing feature(s) {11,31,50,8,18,33,44,27,43} accuracy is 0.7366%
+	Removing feature(s) {11,31,50,8,18,33,44,27,45} accuracy is 0.7302%
+	Removing feature(s) {11,31,50,8,18,33,44,27,46} accuracy is 0.7318%
+	Removing feature(s) {11,31,50,8,18,33,44,27,47} accuracy is 0.7272%
+	Removing feature(s) {11,31,50,8,18,33,44,27,48} accuracy is 0.7298%
+	Removing feature(s) {11,31,50,8,18,33,44,27,49} accuracy is 0.7278%
+
+Feature set {11,31,50,8,18,33,44,27,39} was best, accuracy is 0.7392%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,1} accuracy is 0.7296%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,2} accuracy is 0.7314%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,3} accuracy is 0.7294%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,4} accuracy is 0.7368%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,5} accuracy is 0.7344%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6} accuracy is 0.7382%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,7} accuracy is 0.7356%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,9} accuracy is 0.7362%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,10} accuracy is 0.7268%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,12} accuracy is 0.7326%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,13} accuracy is 0.732%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,14} accuracy is 0.7348%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,15} accuracy is 0.735%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,16} accuracy is 0.725%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,17} accuracy is 0.7318%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,19} accuracy is 0.7334%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,20} accuracy is 0.7254%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,21} accuracy is 0.7254%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,22} accuracy is 0.7328%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,23} accuracy is 0.7354%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,24} accuracy is 0.7288%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,25} accuracy is 0.7346%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,26} accuracy is 0.7334%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,28} accuracy is 0.7354%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,29} accuracy is 0.733%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,30} accuracy is 0.7284%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,32} accuracy is 0.7296%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,34} accuracy is 0.7272%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,35} accuracy is 0.7344%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,36} accuracy is 0.7326%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,37} accuracy is 0.7292%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,38} accuracy is 0.7328%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,40} accuracy is 0.7346%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,41} accuracy is 0.736%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,42} accuracy is 0.7298%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,43} accuracy is 0.7378%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,45} accuracy is 0.7312%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,46} accuracy is 0.7336%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,47} accuracy is 0.7322%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,48} accuracy is 0.735%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,49} accuracy is 0.729%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {11,31,50,8,18,33,44,27,39,6} was best, accuracy is 0.7382%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,1} accuracy is 0.7328%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,2} accuracy is 0.7286%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,3} accuracy is 0.7306%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,4} accuracy is 0.7356%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,5} accuracy is 0.7344%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,7} accuracy is 0.7336%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,9} accuracy is 0.733%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,10} accuracy is 0.7268%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,12} accuracy is 0.7324%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,13} accuracy is 0.7306%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,14} accuracy is 0.733%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,15} accuracy is 0.7328%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,16} accuracy is 0.7284%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,17} accuracy is 0.7332%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,19} accuracy is 0.732%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,20} accuracy is 0.7262%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,21} accuracy is 0.7252%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,22} accuracy is 0.7314%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,23} accuracy is 0.7294%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,24} accuracy is 0.7328%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,25} accuracy is 0.726%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,26} accuracy is 0.732%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,28} accuracy is 0.733%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29} accuracy is 0.7372%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,30} accuracy is 0.7304%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,32} accuracy is 0.7316%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,34} accuracy is 0.7324%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,35} accuracy is 0.733%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,36} accuracy is 0.731%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,37} accuracy is 0.7252%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,38} accuracy is 0.7346%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,40} accuracy is 0.7314%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,41} accuracy is 0.732%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,42} accuracy is 0.7304%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,43} accuracy is 0.7354%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,45} accuracy is 0.7308%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,46} accuracy is 0.7352%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,47} accuracy is 0.7358%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,48} accuracy is 0.7326%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,49} accuracy is 0.7342%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29} was best, accuracy is 0.7372%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,1} accuracy is 0.7346%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,2} accuracy is 0.7294%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,3} accuracy is 0.7288%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,4} accuracy is 0.7336%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,5} accuracy is 0.7356%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,7} accuracy is 0.7288%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,9} accuracy is 0.7356%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,10} accuracy is 0.7274%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,12} accuracy is 0.7312%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,13} accuracy is 0.7312%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,14} accuracy is 0.7362%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,15} accuracy is 0.7318%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,16} accuracy is 0.7296%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,17} accuracy is 0.732%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,19} accuracy is 0.7286%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,20} accuracy is 0.7276%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,21} accuracy is 0.7278%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,22} accuracy is 0.7322%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,23} accuracy is 0.7264%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,24} accuracy is 0.7286%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,25} accuracy is 0.7308%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,26} accuracy is 0.7322%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,28} accuracy is 0.7328%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,30} accuracy is 0.734%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32} accuracy is 0.7382%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,34} accuracy is 0.7282%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,35} accuracy is 0.7328%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,36} accuracy is 0.7286%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,37} accuracy is 0.731%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,38} accuracy is 0.7334%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,40} accuracy is 0.7284%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,41} accuracy is 0.734%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,42} accuracy is 0.7262%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,43} accuracy is 0.7358%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,45} accuracy is 0.728%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,46} accuracy is 0.7334%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,47} accuracy is 0.7306%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,48} accuracy is 0.7358%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,49} accuracy is 0.7338%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32} was best, accuracy is 0.7382%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,1} accuracy is 0.7304%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,2} accuracy is 0.7284%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,3} accuracy is 0.7338%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,4} accuracy is 0.7314%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,5} accuracy is 0.7366%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,7} accuracy is 0.7302%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,9} accuracy is 0.739%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,10} accuracy is 0.7258%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,12} accuracy is 0.7306%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,13} accuracy is 0.7338%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,14} accuracy is 0.7352%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,15} accuracy is 0.7364%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,16} accuracy is 0.7324%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,17} accuracy is 0.726%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,19} accuracy is 0.7316%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,20} accuracy is 0.7252%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,21} accuracy is 0.7282%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,22} accuracy is 0.7286%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,23} accuracy is 0.728%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,24} accuracy is 0.7264%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,25} accuracy is 0.7324%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,26} accuracy is 0.726%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,28} accuracy is 0.7296%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,30} accuracy is 0.7288%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,34} accuracy is 0.7268%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35} accuracy is 0.7394%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,36} accuracy is 0.73%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,37} accuracy is 0.7272%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,38} accuracy is 0.7328%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,40} accuracy is 0.7302%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,41} accuracy is 0.7332%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,42} accuracy is 0.7278%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,43} accuracy is 0.7364%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,45} accuracy is 0.7232%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,46} accuracy is 0.736%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,47} accuracy is 0.7304%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,48} accuracy is 0.735%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,49} accuracy is 0.736%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35} was best, accuracy is 0.7394%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,1} accuracy is 0.7346%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,2} accuracy is 0.7314%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,3} accuracy is 0.7354%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,4} accuracy is 0.7368%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,5} accuracy is 0.7412%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,7} accuracy is 0.7332%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,9} accuracy is 0.7386%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,10} accuracy is 0.728%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,12} accuracy is 0.7384%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,13} accuracy is 0.7312%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,14} accuracy is 0.7374%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,15} accuracy is 0.7342%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,16} accuracy is 0.7342%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,17} accuracy is 0.7294%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,19} accuracy is 0.7374%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,20} accuracy is 0.7304%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,21} accuracy is 0.7306%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,22} accuracy is 0.7318%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,23} accuracy is 0.7332%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,24} accuracy is 0.7304%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,25} accuracy is 0.7368%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,26} accuracy is 0.7334%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,28} accuracy is 0.7292%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,30} accuracy is 0.737%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,34} accuracy is 0.7382%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,36} accuracy is 0.737%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,37} accuracy is 0.7332%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,38} accuracy is 0.7336%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,40} accuracy is 0.7312%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,41} accuracy is 0.7388%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,42} accuracy is 0.7346%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43} accuracy is 0.7426%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,45} accuracy is 0.7292%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,46} accuracy is 0.7332%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,47} accuracy is 0.7318%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,48} accuracy is 0.7356%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,49} accuracy is 0.739%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43} was best, accuracy is 0.7426%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,1} accuracy is 0.7378%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,2} accuracy is 0.7372%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,3} accuracy is 0.738%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,4} accuracy is 0.7414%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5} accuracy is 0.7428%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,7} accuracy is 0.7376%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,9} accuracy is 0.741%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,10} accuracy is 0.7336%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,12} accuracy is 0.7374%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,13} accuracy is 0.741%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,14} accuracy is 0.7358%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,15} accuracy is 0.736%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,16} accuracy is 0.7364%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,17} accuracy is 0.7358%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,19} accuracy is 0.7374%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,20} accuracy is 0.7332%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,21} accuracy is 0.7402%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,22} accuracy is 0.7354%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,23} accuracy is 0.7376%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,24} accuracy is 0.7368%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,25} accuracy is 0.7358%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,26} accuracy is 0.7378%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,28} accuracy is 0.7336%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,30} accuracy is 0.7342%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,34} accuracy is 0.7354%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,36} accuracy is 0.7368%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,37} accuracy is 0.7362%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,38} accuracy is 0.7318%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,40} accuracy is 0.7298%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,41} accuracy is 0.7352%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,42} accuracy is 0.7338%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,45} accuracy is 0.7362%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,46} accuracy is 0.741%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,47} accuracy is 0.7346%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,48} accuracy is 0.738%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,49} accuracy is 0.7384%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5} was best, accuracy is 0.7428%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,1} accuracy is 0.7348%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,2} accuracy is 0.7342%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,3} accuracy is 0.7376%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,4} accuracy is 0.7382%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,7} accuracy is 0.7398%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9} accuracy is 0.741%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,10} accuracy is 0.7344%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,12} accuracy is 0.7346%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,13} accuracy is 0.7392%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,14} accuracy is 0.7404%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,15} accuracy is 0.7356%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,16} accuracy is 0.735%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,17} accuracy is 0.7338%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,19} accuracy is 0.736%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,20} accuracy is 0.731%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,21} accuracy is 0.7382%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,22} accuracy is 0.7324%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,23} accuracy is 0.7356%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,24} accuracy is 0.7326%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,25} accuracy is 0.7344%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,26} accuracy is 0.7404%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,28} accuracy is 0.7312%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,30} accuracy is 0.7362%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,34} accuracy is 0.734%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,36} accuracy is 0.7382%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,37} accuracy is 0.7374%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,38} accuracy is 0.7314%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,40} accuracy is 0.7324%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,41} accuracy is 0.7408%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,42} accuracy is 0.7334%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,45} accuracy is 0.7356%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,46} accuracy is 0.733%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,47} accuracy is 0.7302%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,48} accuracy is 0.7356%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,49} accuracy is 0.7408%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9} was best, accuracy is 0.741%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,1} accuracy is 0.735%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,2} accuracy is 0.7334%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,3} accuracy is 0.7408%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,4} accuracy is 0.7408%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,7} accuracy is 0.74%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,10} accuracy is 0.7324%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,12} accuracy is 0.7418%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,13} accuracy is 0.7384%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,14} accuracy is 0.7404%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,15} accuracy is 0.7328%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,16} accuracy is 0.736%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,17} accuracy is 0.7328%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,19} accuracy is 0.7358%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,20} accuracy is 0.735%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,21} accuracy is 0.7352%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,22} accuracy is 0.7318%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,23} accuracy is 0.7368%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,24} accuracy is 0.7308%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,25} accuracy is 0.7368%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,26} accuracy is 0.7388%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,28} accuracy is 0.736%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,30} accuracy is 0.7322%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,34} accuracy is 0.7404%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,36} accuracy is 0.735%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,37} accuracy is 0.7412%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,38} accuracy is 0.7384%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,40} accuracy is 0.7358%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41} accuracy is 0.7432%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,42} accuracy is 0.7338%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,45} accuracy is 0.7318%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,46} accuracy is 0.7358%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,47} accuracy is 0.7352%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,48} accuracy is 0.7302%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,49} accuracy is 0.7348%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41} was best, accuracy is 0.7432%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,1} accuracy is 0.7378%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,2} accuracy is 0.7352%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,3} accuracy is 0.7438%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,4} accuracy is 0.7366%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7} accuracy is 0.7444%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,10} accuracy is 0.7386%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,12} accuracy is 0.7352%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,13} accuracy is 0.736%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,14} accuracy is 0.7418%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,15} accuracy is 0.7348%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,16} accuracy is 0.737%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,17} accuracy is 0.729%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,19} accuracy is 0.7386%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,20} accuracy is 0.733%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,21} accuracy is 0.7366%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,22} accuracy is 0.7366%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,23} accuracy is 0.7364%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,24} accuracy is 0.7326%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,25} accuracy is 0.7394%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,26} accuracy is 0.738%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,28} accuracy is 0.7348%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,30} accuracy is 0.7348%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,34} accuracy is 0.7402%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,36} accuracy is 0.7422%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,37} accuracy is 0.739%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,38} accuracy is 0.7396%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,40} accuracy is 0.7348%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,42} accuracy is 0.7428%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,45} accuracy is 0.7302%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,46} accuracy is 0.7342%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,47} accuracy is 0.7394%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,48} accuracy is 0.7392%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,49} accuracy is 0.7322%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7} was best, accuracy is 0.7444%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,1} accuracy is 0.7368%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,2} accuracy is 0.739%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,3} accuracy is 0.738%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4} accuracy is 0.747%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,10} accuracy is 0.7428%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,12} accuracy is 0.7418%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,13} accuracy is 0.7402%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,14} accuracy is 0.742%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,15} accuracy is 0.7364%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,16} accuracy is 0.7376%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,17} accuracy is 0.7342%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,19} accuracy is 0.7396%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,20} accuracy is 0.7396%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,21} accuracy is 0.7366%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,22} accuracy is 0.7412%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,23} accuracy is 0.7382%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,24} accuracy is 0.7372%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,25} accuracy is 0.744%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,26} accuracy is 0.7354%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,28} accuracy is 0.7334%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,30} accuracy is 0.7358%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,34} accuracy is 0.745%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,36} accuracy is 0.7436%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,37} accuracy is 0.7368%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,38} accuracy is 0.7386%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,40} accuracy is 0.7362%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,42} accuracy is 0.7404%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,45} accuracy is 0.7334%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,46} accuracy is 0.738%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,47} accuracy is 0.741%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,48} accuracy is 0.737%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,49} accuracy is 0.738%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4} was best, accuracy is 0.747%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,1} accuracy is 0.7368%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,2} accuracy is 0.7424%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,3} accuracy is 0.7404%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,10} accuracy is 0.742%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12} accuracy is 0.747%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,13} accuracy is 0.7426%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,14} accuracy is 0.7392%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,15} accuracy is 0.7386%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,16} accuracy is 0.7358%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,17} accuracy is 0.7344%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,19} accuracy is 0.7424%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,20} accuracy is 0.7368%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,21} accuracy is 0.7394%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,22} accuracy is 0.7366%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,23} accuracy is 0.7396%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,24} accuracy is 0.7404%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,25} accuracy is 0.7368%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,26} accuracy is 0.7406%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,28} accuracy is 0.739%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,30} accuracy is 0.7376%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,34} accuracy is 0.7468%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,36} accuracy is 0.7428%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,37} accuracy is 0.7422%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,38} accuracy is 0.741%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,40} accuracy is 0.7378%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,42} accuracy is 0.7404%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,45} accuracy is 0.7334%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,46} accuracy is 0.7368%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,47} accuracy is 0.7338%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,48} accuracy is 0.7368%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,49} accuracy is 0.7376%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12} was best, accuracy is 0.747%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,1} accuracy is 0.7422%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,2} accuracy is 0.7436%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,3} accuracy is 0.7414%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,10} accuracy is 0.7418%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,13} accuracy is 0.7416%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,14} accuracy is 0.7416%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,15} accuracy is 0.74%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,16} accuracy is 0.7428%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,17} accuracy is 0.7332%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,19} accuracy is 0.744%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,20} accuracy is 0.7432%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,21} accuracy is 0.7382%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,22} accuracy is 0.7414%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,23} accuracy is 0.7408%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,24} accuracy is 0.7394%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,25} accuracy is 0.7404%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,26} accuracy is 0.7438%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,28} accuracy is 0.7338%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,30} accuracy is 0.7408%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,34} accuracy is 0.746%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,36} accuracy is 0.7432%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,37} accuracy is 0.7406%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38} accuracy is 0.7464%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,40} accuracy is 0.741%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,42} accuracy is 0.7434%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,45} accuracy is 0.7296%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,46} accuracy is 0.737%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,47} accuracy is 0.7346%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,48} accuracy is 0.742%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,49} accuracy is 0.7328%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38} was best, accuracy is 0.7464%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,1} accuracy is 0.7394%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,2} accuracy is 0.7434%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,3} accuracy is 0.7406%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,10} accuracy is 0.7462%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13} accuracy is 0.7466%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,14} accuracy is 0.7416%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,15} accuracy is 0.7402%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,16} accuracy is 0.7364%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,17} accuracy is 0.7386%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,19} accuracy is 0.7456%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,20} accuracy is 0.7354%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,21} accuracy is 0.7428%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,22} accuracy is 0.744%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,23} accuracy is 0.7426%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,24} accuracy is 0.7412%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,25} accuracy is 0.7366%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,26} accuracy is 0.7384%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,28} accuracy is 0.7392%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,30} accuracy is 0.7422%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,34} accuracy is 0.7416%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,36} accuracy is 0.7462%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,37} accuracy is 0.7414%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,40} accuracy is 0.7426%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,42} accuracy is 0.7458%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,45} accuracy is 0.7326%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,46} accuracy is 0.74%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,47} accuracy is 0.7328%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,48} accuracy is 0.741%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,49} accuracy is 0.7342%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13} was best, accuracy is 0.7466%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,1} accuracy is 0.7394%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,2} accuracy is 0.745%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,3} accuracy is 0.7396%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,10} accuracy is 0.7464%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,14} accuracy is 0.745%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,15} accuracy is 0.7406%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,16} accuracy is 0.7402%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,17} accuracy is 0.7412%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19} accuracy is 0.7468%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,20} accuracy is 0.7416%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,21} accuracy is 0.7414%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,22} accuracy is 0.7424%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,23} accuracy is 0.7414%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,24} accuracy is 0.7402%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,25} accuracy is 0.7326%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,26} accuracy is 0.7396%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,28} accuracy is 0.7406%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,30} accuracy is 0.7434%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,34} accuracy is 0.7404%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,36} accuracy is 0.743%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,37} accuracy is 0.7366%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,40} accuracy is 0.74%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,42} accuracy is 0.7374%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,45} accuracy is 0.7324%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,46} accuracy is 0.7456%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,47} accuracy is 0.7322%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,48} accuracy is 0.7396%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,49} accuracy is 0.7368%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19} was best, accuracy is 0.7468%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,1} accuracy is 0.7368%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,2} accuracy is 0.7422%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,3} accuracy is 0.744%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,10} accuracy is 0.7418%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,14} accuracy is 0.7392%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,15} accuracy is 0.745%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,16} accuracy is 0.7378%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,17} accuracy is 0.7374%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,20} accuracy is 0.735%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,21} accuracy is 0.7406%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22} accuracy is 0.7482%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,23} accuracy is 0.7386%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,24} accuracy is 0.7334%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,25} accuracy is 0.7376%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,26} accuracy is 0.74%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,28} accuracy is 0.7434%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,30} accuracy is 0.7398%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,34} accuracy is 0.7426%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,36} accuracy is 0.7452%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,37} accuracy is 0.7428%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,40} accuracy is 0.7298%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,42} accuracy is 0.7384%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,45} accuracy is 0.7328%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,46} accuracy is 0.7416%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,47} accuracy is 0.7368%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,48} accuracy is 0.7362%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,49} accuracy is 0.7372%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22} was best, accuracy is 0.7482%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,1} accuracy is 0.7376%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,2} accuracy is 0.7452%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,3} accuracy is 0.7424%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,10} accuracy is 0.743%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,14} accuracy is 0.744%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,15} accuracy is 0.742%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,16} accuracy is 0.7382%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,17} accuracy is 0.7334%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,20} accuracy is 0.7378%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,21} accuracy is 0.7446%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,23} accuracy is 0.739%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,24} accuracy is 0.7318%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,25} accuracy is 0.739%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,26} accuracy is 0.7382%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,28} accuracy is 0.7336%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,30} accuracy is 0.7438%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,34} accuracy is 0.7452%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,36} accuracy is 0.7414%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,37} accuracy is 0.7386%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,40} accuracy is 0.73%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,42} accuracy is 0.734%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,45} accuracy is 0.7356%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,46} accuracy is 0.7406%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,47} accuracy is 0.7342%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48} accuracy is 0.7474%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,49} accuracy is 0.7344%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48} was best, accuracy is 0.7474%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,1} accuracy is 0.7432%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,2} accuracy is 0.74%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,3} accuracy is 0.7444%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,10} accuracy is 0.7464%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,14} accuracy is 0.734%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,15} accuracy is 0.7388%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,16} accuracy is 0.7396%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,17} accuracy is 0.7336%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,20} accuracy is 0.7432%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,21} accuracy is 0.742%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,23} accuracy is 0.737%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,24} accuracy is 0.738%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,25} accuracy is 0.7358%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,26} accuracy is 0.7466%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,28} accuracy is 0.7346%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,30} accuracy is 0.7432%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34} accuracy is 0.7496%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,36} accuracy is 0.746%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,37} accuracy is 0.74%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,40} accuracy is 0.7308%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,42} accuracy is 0.7376%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,45} accuracy is 0.737%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,46} accuracy is 0.741%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,47} accuracy is 0.739%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,49} accuracy is 0.7338%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34} was best, accuracy is 0.7496%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,1} accuracy is 0.747%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2} accuracy is 0.7516%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,3} accuracy is 0.746%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,10} accuracy is 0.748%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,14} accuracy is 0.7362%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,15} accuracy is 0.7424%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,16} accuracy is 0.745%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,17} accuracy is 0.7358%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,20} accuracy is 0.735%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,21} accuracy is 0.7458%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,23} accuracy is 0.7388%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,24} accuracy is 0.7418%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,25} accuracy is 0.7384%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,26} accuracy is 0.7406%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,28} accuracy is 0.739%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,30} accuracy is 0.7464%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,36} accuracy is 0.7436%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,37} accuracy is 0.7504%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,40} accuracy is 0.7336%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,42} accuracy is 0.7418%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,45} accuracy is 0.7376%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,46} accuracy is 0.7458%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,47} accuracy is 0.7428%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,49} accuracy is 0.736%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2} was best, accuracy is 0.7516%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,1} accuracy is 0.745%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,3} accuracy is 0.742%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10} accuracy is 0.7506%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,14} accuracy is 0.7398%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,15} accuracy is 0.7378%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,16} accuracy is 0.743%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,17} accuracy is 0.739%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,20} accuracy is 0.7412%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,21} accuracy is 0.7438%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,23} accuracy is 0.7348%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,24} accuracy is 0.7434%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,25} accuracy is 0.7434%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,26} accuracy is 0.7372%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,28} accuracy is 0.7398%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,30} accuracy is 0.7474%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,36} accuracy is 0.7428%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,37} accuracy is 0.748%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,40} accuracy is 0.7384%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,42} accuracy is 0.735%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,45} accuracy is 0.728%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,46} accuracy is 0.7434%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,47} accuracy is 0.74%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,49} accuracy is 0.734%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10} was best, accuracy is 0.7506%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,1} accuracy is 0.7458%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,3} accuracy is 0.7404%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,14} accuracy is 0.7392%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,15} accuracy is 0.739%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,16} accuracy is 0.7424%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,17} accuracy is 0.7344%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,20} accuracy is 0.7372%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,21} accuracy is 0.7426%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,23} accuracy is 0.7386%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,24} accuracy is 0.7424%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,25} accuracy is 0.7442%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,26} accuracy is 0.7404%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,28} accuracy is 0.744%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,30} accuracy is 0.748%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36} accuracy is 0.748%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,37} accuracy is 0.742%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,40} accuracy is 0.7398%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,42} accuracy is 0.74%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,45} accuracy is 0.7258%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,46} accuracy is 0.7438%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,47} accuracy is 0.74%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,49} accuracy is 0.7368%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36} was best, accuracy is 0.748%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,1} accuracy is 0.7412%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,3} accuracy is 0.7398%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,14} accuracy is 0.7392%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,15} accuracy is 0.7424%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,16} accuracy is 0.7426%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,17} accuracy is 0.738%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,20} accuracy is 0.7414%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,21} accuracy is 0.7414%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,23} accuracy is 0.739%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,24} accuracy is 0.739%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,25} accuracy is 0.7404%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,26} accuracy is 0.7472%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,28} accuracy is 0.7446%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30} accuracy is 0.7482%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,37} accuracy is 0.7392%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,40} accuracy is 0.7404%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,42} accuracy is 0.7376%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,45} accuracy is 0.7298%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,46} accuracy is 0.7438%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,47} accuracy is 0.7422%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,49} accuracy is 0.7366%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30} was best, accuracy is 0.7482%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1} accuracy is 0.7494%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,3} accuracy is 0.741%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,14} accuracy is 0.7392%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,15} accuracy is 0.7478%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,16} accuracy is 0.7412%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,17} accuracy is 0.7386%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,20} accuracy is 0.7352%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,21} accuracy is 0.7456%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,23} accuracy is 0.7452%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,24} accuracy is 0.7408%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,25} accuracy is 0.7396%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,26} accuracy is 0.7428%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,28} accuracy is 0.7376%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,37} accuracy is 0.7404%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,40} accuracy is 0.7396%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,42} accuracy is 0.738%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,45} accuracy is 0.7268%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,46} accuracy is 0.747%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,47} accuracy is 0.7378%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,49} accuracy is 0.735%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1} was best, accuracy is 0.7494%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,3} accuracy is 0.745%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,14} accuracy is 0.7386%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15} accuracy is 0.751%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,16} accuracy is 0.7408%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,17} accuracy is 0.7408%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,20} accuracy is 0.7364%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,21} accuracy is 0.746%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,23} accuracy is 0.741%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,24} accuracy is 0.7382%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,25} accuracy is 0.743%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,26} accuracy is 0.7446%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,28} accuracy is 0.7404%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,37} accuracy is 0.7462%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,40} accuracy is 0.7378%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,42} accuracy is 0.7392%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,45} accuracy is 0.7222%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,46} accuracy is 0.7478%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,47} accuracy is 0.7402%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,49} accuracy is 0.7456%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15} was best, accuracy is 0.751%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,3} accuracy is 0.7454%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,14} accuracy is 0.741%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,16} accuracy is 0.748%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,17} accuracy is 0.7474%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,20} accuracy is 0.7446%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21} accuracy is 0.7562%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,23} accuracy is 0.7462%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,24} accuracy is 0.7476%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,25} accuracy is 0.7452%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,26} accuracy is 0.7476%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,28} accuracy is 0.7444%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,37} accuracy is 0.7496%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,40} accuracy is 0.7408%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,42} accuracy is 0.7452%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,45} accuracy is 0.718%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,46} accuracy is 0.7474%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,47} accuracy is 0.7458%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,49} accuracy is 0.7462%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21} was best, accuracy is 0.7562%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3} accuracy is 0.7538%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,14} accuracy is 0.7502%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,16} accuracy is 0.7442%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,17} accuracy is 0.7446%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,20} accuracy is 0.7472%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,23} accuracy is 0.748%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,24} accuracy is 0.7496%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,25} accuracy is 0.7434%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,26} accuracy is 0.7468%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,28} accuracy is 0.7526%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,37} accuracy is 0.747%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,40} accuracy is 0.74%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,42} accuracy is 0.7514%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,45} accuracy is 0.7204%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,46} accuracy is 0.7462%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,47} accuracy is 0.7476%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,49} accuracy is 0.7458%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3} was best, accuracy is 0.7538%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,14} accuracy is 0.746%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,16} accuracy is 0.7492%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,17} accuracy is 0.7408%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,20} accuracy is 0.752%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,23} accuracy is 0.7482%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,24} accuracy is 0.7522%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25} accuracy is 0.755%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,26} accuracy is 0.7426%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,28} accuracy is 0.7456%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,37} accuracy is 0.7422%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,40} accuracy is 0.7398%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,42} accuracy is 0.7528%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,45} accuracy is 0.72%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,46} accuracy is 0.7512%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,47} accuracy is 0.7422%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,49} accuracy is 0.7466%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25} was best, accuracy is 0.755%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,14} accuracy is 0.7506%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,16} accuracy is 0.7518%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,17} accuracy is 0.7408%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,20} accuracy is 0.752%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,23} accuracy is 0.7474%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,24} accuracy is 0.75%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,26} accuracy is 0.7446%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,28} accuracy is 0.7426%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,37} accuracy is 0.7526%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,40} accuracy is 0.7398%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,42} accuracy is 0.7454%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,45} accuracy is 0.7142%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46} accuracy is 0.7552%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,47} accuracy is 0.7434%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,49} accuracy is 0.7454%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46} was best, accuracy is 0.7552%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,14} accuracy is 0.7522%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,16} accuracy is 0.7518%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,17} accuracy is 0.7506%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,20} accuracy is 0.7536%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,23} accuracy is 0.7548%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24} accuracy is 0.7572%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,26} accuracy is 0.7568%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,28} accuracy is 0.7456%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,37} accuracy is 0.7498%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,40} accuracy is 0.7508%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,42} accuracy is 0.7544%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,45} accuracy is 0.713%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,47} accuracy is 0.7436%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,49} accuracy is 0.7492%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24} was best, accuracy is 0.7572%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,14} accuracy is 0.7508%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,16} accuracy is 0.7486%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,17} accuracy is 0.758%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,20} accuracy is 0.7568%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,23} accuracy is 0.7528%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,26} accuracy is 0.7566%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28} accuracy is 0.7596%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,37} accuracy is 0.751%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,40} accuracy is 0.7594%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,42} accuracy is 0.7566%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,45} accuracy is 0.7108%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,47} accuracy is 0.753%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,49} accuracy is 0.7498%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28} was best, accuracy is 0.7596%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,14} accuracy is 0.7548%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,16} accuracy is 0.7518%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,17} accuracy is 0.7644%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,20} accuracy is 0.7636%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,23} accuracy is 0.7588%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26} accuracy is 0.7684%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,37} accuracy is 0.754%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,40} accuracy is 0.764%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,42} accuracy is 0.7634%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,45} accuracy is 0.7088%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,47} accuracy is 0.7602%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,49} accuracy is 0.7496%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26} was best, accuracy is 0.7684%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,14} accuracy is 0.763%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,16} accuracy is 0.7708%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,17} accuracy is 0.7692%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20} accuracy is 0.7782%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,23} accuracy is 0.773%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,37} accuracy is 0.7642%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,40} accuracy is 0.7664%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,42} accuracy is 0.7692%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,45} accuracy is 0.7248%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,47} accuracy is 0.766%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,49} accuracy is 0.7628%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20} was best, accuracy is 0.7782%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,14} accuracy is 0.7738%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16} accuracy is 0.778%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,17} accuracy is 0.7762%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,23} accuracy is 0.7742%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,37} accuracy is 0.7732%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,40} accuracy is 0.776%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,42} accuracy is 0.7704%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,45} accuracy is 0.7152%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,47} accuracy is 0.776%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,49} accuracy is 0.771%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16} was best, accuracy is 0.778%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,14} accuracy is 0.7704%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,17} accuracy is 0.7814%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,23} accuracy is 0.7816%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37} accuracy is 0.7822%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,40} accuracy is 0.7812%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,42} accuracy is 0.7728%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,45} accuracy is 0.714%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,47} accuracy is 0.7748%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,49} accuracy is 0.7802%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37} was best, accuracy is 0.7822%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,14} accuracy is 0.7806%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,17} accuracy is 0.7894%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23} accuracy is 0.7932%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,40} accuracy is 0.776%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,42} accuracy is 0.7814%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,45} accuracy is 0.7112%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,47} accuracy is 0.7848%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,49} accuracy is 0.79%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23} was best, accuracy is 0.7932%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,14} accuracy is 0.7972%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,17} accuracy is 0.8012%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,40} accuracy is 0.7946%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,42} accuracy is 0.7972%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,45} accuracy is 0.7118%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,47} accuracy is 0.7872%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49} accuracy is 0.802%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49} was best, accuracy is 0.802%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,14} accuracy is 0.8114%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,17} accuracy is 0.813%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,40} accuracy is 0.8052%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,42} accuracy is 0.8024%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,45} accuracy is 0.702%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47} accuracy is 0.8138%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47} was best, accuracy is 0.8138%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,14} accuracy is 0.8248%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,17} accuracy is 0.8344%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,40} accuracy is 0.8208%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,42} accuracy is 0.8194%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,45} accuracy is 0.7046%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,17} was best, accuracy is 0.8344%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,17,14} accuracy is 0.844%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,17,40} accuracy is 0.8392%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,17,42} accuracy is 0.8346%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,17,45} accuracy is 0.704%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,17,14} was best, accuracy is 0.844%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,17,14,40} accuracy is 0.834%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,17,14,42} accuracy is 0.8458%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,17,14,45} accuracy is 0.7088%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,17,14,42} was best, accuracy is 0.8458%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,17,14,42,40} accuracy is 0.8458%
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,17,14,42,45} accuracy is 0.705%
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,17,14,42,40} was best, accuracy is 0.8458%
+
+	Removing feature(s) {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,17,14,42,40,45} accuracy is 0.1814%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,17,14,42,40,45} was best, accuracy is 0.1814%
+
+Finished search!!! The best feature subset is {11,31,50,8,18,33,44,27,39,6,29,32,35,43,5,9,41,7,4,12,38,13,19,22,48,34,2,10,36,30,1,15,21,3,25,46,24,28,26,20,16,37,23,49,47,17,14,42}, which has an accuracy of 0.8458%
+Elapsed (after compilation) = 130245.3639717102
