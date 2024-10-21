@@ -1,0 +1,302 @@
+/home/stu024/CS_205/KNN.py:8: ParserWarning: Falling back to the 'python' engine because the 'c' engine does not support regex separators (separators > 1 char and different from '\s+' are interpreted as regex); you can avoid this warning by specifying engine='python'.
+  small_data_19 = pd.read_csv('/home/stu024/CS_205/CS205_small_Data__19.txt', sep='  ', header=None)
+/home/stu024/CS_205/KNN.py:13: ParserWarning: Falling back to the 'python' engine because the 'c' engine does not support regex separators (separators > 1 char and different from '\s+' are interpreted as regex); you can avoid this warning by specifying engine='python'.
+  large_data_6 = pd.read_csv('/home/stu024/CS_205/CS205_large_Data__6.txt', sep='  ', header=None)
+/home/stu024/CS_205/KNN.py:19: ParserWarning: Falling back to the 'python' engine because the 'c' engine does not support regex separators (separators > 1 char and different from '\s+' are interpreted as regex); you can avoid this warning by specifying engine='python'.
+  small_data_21 = pd.read_csv('/home/stu024/CS_205/CS205_small_Data__21.txt', sep='  ', header=None)
+/home/stu024/CS_205/KNN.py:24: ParserWarning: Falling back to the 'python' engine because the 'c' engine does not support regex separators (separators > 1 char and different from '\s+' are interpreted as regex); you can avoid this warning by specifying engine='python'.
+  large_data_13 = pd.read_csv('/home/stu024/CS_205/CS205_large_Data__13.txt', sep='  ', header=None)
+Welcome to KNN Feature Selection Algorithm!
+
+Please select the file you would like to test: 
+1. Sample Small 19
+2. Assigned Small 21
+3. Sample Large 6
+4. Assigned Larg 13e
+
+Your selection: Please select the algorithm you would like to run: 
+
+1. Forward Selection
+2. Backward Elimination
+3. Both
+
+Your selection: This dataset has 12 features (not including the class attribute), with 500 instances.
+
+Running KNN with all 12 åfeatures, using "leave-one-out" evaluation, I get an accuracy of 0.6666666666666666%
+
+Beginning search.
+
+Starting with Forward Selection.
+
+	Using feature(s) {1} accuracy is 0.73%
+	Using feature(s) {2} accuracy is 0.712%
+	Using feature(s) {3} accuracy is 0.71%
+	Using feature(s) {4} accuracy is 0.804%
+	Using feature(s) {5} accuracy is 0.716%
+	Using feature(s) {6} accuracy is 0.682%
+	Using feature(s) {7} accuracy is 0.678%
+	Using feature(s) {8} accuracy is 0.678%
+	Using feature(s) {9} accuracy is 0.696%
+	Using feature(s) {10} accuracy is 0.75%
+	Using feature(s) {11} accuracy is 0.7%
+	Using feature(s) {12} accuracy is 0.736%
+
+Feature set {4} was best, accuracy is 0.804%
+
+	Using feature(s) {4,1} accuracy is 0.84%
+	Using feature(s) {4,2} accuracy is 0.792%
+	Using feature(s) {4,3} accuracy is 0.8%
+	Using feature(s) {4,5} accuracy is 0.814%
+	Using feature(s) {4,6} accuracy is 0.81%
+	Using feature(s) {4,7} accuracy is 0.832%
+	Using feature(s) {4,8} accuracy is 0.84%
+	Using feature(s) {4,9} accuracy is 0.814%
+	Using feature(s) {4,10} accuracy is 0.96%
+	Using feature(s) {4,11} accuracy is 0.824%
+	Using feature(s) {4,12} accuracy is 0.838%
+
+Feature set {4,10} was best, accuracy is 0.96%
+
+	Using feature(s) {4,10,1} accuracy is 0.93%
+	Using feature(s) {4,10,2} accuracy is 0.916%
+	Using feature(s) {4,10,3} accuracy is 0.91%
+	Using feature(s) {4,10,5} accuracy is 0.932%
+	Using feature(s) {4,10,6} accuracy is 0.92%
+	Using feature(s) {4,10,7} accuracy is 0.9%
+	Using feature(s) {4,10,8} accuracy is 0.914%
+	Using feature(s) {4,10,9} accuracy is 0.926%
+	Using feature(s) {4,10,11} accuracy is 0.926%
+	Using feature(s) {4,10,12} accuracy is 0.96%
+
+Feature set {4,10,12} was best, accuracy is 0.96%
+
+	Using feature(s) {4,10,12,1} accuracy is 0.898%
+	Using feature(s) {4,10,12,2} accuracy is 0.896%
+	Using feature(s) {4,10,12,3} accuracy is 0.876%
+	Using feature(s) {4,10,12,5} accuracy is 0.882%
+	Using feature(s) {4,10,12,6} accuracy is 0.89%
+	Using feature(s) {4,10,12,7} accuracy is 0.89%
+	Using feature(s) {4,10,12,8} accuracy is 0.904%
+	Using feature(s) {4,10,12,9} accuracy is 0.886%
+	Using feature(s) {4,10,12,11} accuracy is 0.866%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {4,10,12,8} was best, accuracy is 0.904%
+
+	Using feature(s) {4,10,12,8,1} accuracy is 0.864%
+	Using feature(s) {4,10,12,8,2} accuracy is 0.872%
+	Using feature(s) {4,10,12,8,3} accuracy is 0.87%
+	Using feature(s) {4,10,12,8,5} accuracy is 0.86%
+	Using feature(s) {4,10,12,8,6} accuracy is 0.854%
+	Using feature(s) {4,10,12,8,7} accuracy is 0.862%
+	Using feature(s) {4,10,12,8,9} accuracy is 0.846%
+	Using feature(s) {4,10,12,8,11} accuracy is 0.868%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {4,10,12,8,2} was best, accuracy is 0.872%
+
+	Using feature(s) {4,10,12,8,2,1} accuracy is 0.836%
+	Using feature(s) {4,10,12,8,2,3} accuracy is 0.84%
+	Using feature(s) {4,10,12,8,2,5} accuracy is 0.832%
+	Using feature(s) {4,10,12,8,2,6} accuracy is 0.862%
+	Using feature(s) {4,10,12,8,2,7} accuracy is 0.83%
+	Using feature(s) {4,10,12,8,2,9} accuracy is 0.824%
+	Using feature(s) {4,10,12,8,2,11} accuracy is 0.852%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {4,10,12,8,2,6} was best, accuracy is 0.862%
+
+	Using feature(s) {4,10,12,8,2,6,1} accuracy is 0.832%
+	Using feature(s) {4,10,12,8,2,6,3} accuracy is 0.808%
+	Using feature(s) {4,10,12,8,2,6,5} accuracy is 0.81%
+	Using feature(s) {4,10,12,8,2,6,7} accuracy is 0.808%
+	Using feature(s) {4,10,12,8,2,6,9} accuracy is 0.81%
+	Using feature(s) {4,10,12,8,2,6,11} accuracy is 0.832%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {4,10,12,8,2,6,11} was best, accuracy is 0.832%
+
+	Using feature(s) {4,10,12,8,2,6,11,1} accuracy is 0.812%
+	Using feature(s) {4,10,12,8,2,6,11,3} accuracy is 0.82%
+	Using feature(s) {4,10,12,8,2,6,11,5} accuracy is 0.8%
+	Using feature(s) {4,10,12,8,2,6,11,7} accuracy is 0.798%
+	Using feature(s) {4,10,12,8,2,6,11,9} accuracy is 0.81%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {4,10,12,8,2,6,11,3} was best, accuracy is 0.82%
+
+	Using feature(s) {4,10,12,8,2,6,11,3,1} accuracy is 0.792%
+	Using feature(s) {4,10,12,8,2,6,11,3,5} accuracy is 0.792%
+	Using feature(s) {4,10,12,8,2,6,11,3,7} accuracy is 0.784%
+	Using feature(s) {4,10,12,8,2,6,11,3,9} accuracy is 0.792%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {4,10,12,8,2,6,11,3,9} was best, accuracy is 0.792%
+
+	Using feature(s) {4,10,12,8,2,6,11,3,9,1} accuracy is 0.786%
+	Using feature(s) {4,10,12,8,2,6,11,3,9,5} accuracy is 0.774%
+	Using feature(s) {4,10,12,8,2,6,11,3,9,7} accuracy is 0.788%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {4,10,12,8,2,6,11,3,9,7} was best, accuracy is 0.788%
+
+	Using feature(s) {4,10,12,8,2,6,11,3,9,7,1} accuracy is 0.758%
+	Using feature(s) {4,10,12,8,2,6,11,3,9,7,5} accuracy is 0.736%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {4,10,12,8,2,6,11,3,9,7,1} was best, accuracy is 0.758%
+
+	Using feature(s) {4,10,12,8,2,6,11,3,9,7,1,5} accuracy is 0.74%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {4,10,12,8,2,6,11,3,9,7,1,5} was best, accuracy is 0.74%
+
+Finished search!!! The best feature subset is {4,10}, which has an accuracy of 0.96%
+Elapsed (after compilation) = 82.58225846290588
+Starting Backward Elimination.
+
+	Removing feature(s) {1} accuracy is 0.736%
+	Removing feature(s) {2} accuracy is 0.76%
+	Removing feature(s) {3} accuracy is 0.754%
+	Removing feature(s) {4} accuracy is 0.7%
+	Removing feature(s) {5} accuracy is 0.758%
+	Removing feature(s) {6} accuracy is 0.752%
+	Removing feature(s) {7} accuracy is 0.78%
+	Removing feature(s) {8} accuracy is 0.75%
+	Removing feature(s) {9} accuracy is 0.74%
+	Removing feature(s) {10} accuracy is 0.714%
+	Removing feature(s) {11} accuracy is 0.726%
+	Removing feature(s) {12} accuracy is 0.738%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {7} was best, accuracy is 0.78%
+
+	Removing feature(s) {7,1} accuracy is 0.774%
+	Removing feature(s) {7,2} accuracy is 0.792%
+	Removing feature(s) {7,3} accuracy is 0.778%
+	Removing feature(s) {7,4} accuracy is 0.724%
+	Removing feature(s) {7,5} accuracy is 0.786%
+	Removing feature(s) {7,6} accuracy is 0.768%
+	Removing feature(s) {7,8} accuracy is 0.782%
+	Removing feature(s) {7,9} accuracy is 0.774%
+	Removing feature(s) {7,10} accuracy is 0.752%
+	Removing feature(s) {7,11} accuracy is 0.79%
+	Removing feature(s) {7,12} accuracy is 0.76%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {7,2} was best, accuracy is 0.792%
+
+	Removing feature(s) {7,2,1} accuracy is 0.798%
+	Removing feature(s) {7,2,3} accuracy is 0.792%
+	Removing feature(s) {7,2,4} accuracy is 0.732%
+	Removing feature(s) {7,2,5} accuracy is 0.808%
+	Removing feature(s) {7,2,6} accuracy is 0.792%
+	Removing feature(s) {7,2,8} accuracy is 0.774%
+	Removing feature(s) {7,2,9} accuracy is 0.79%
+	Removing feature(s) {7,2,10} accuracy is 0.762%
+	Removing feature(s) {7,2,11} accuracy is 0.79%
+	Removing feature(s) {7,2,12} accuracy is 0.744%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {7,2,5} was best, accuracy is 0.808%
+
+	Removing feature(s) {7,2,5,1} accuracy is 0.812%
+	Removing feature(s) {7,2,5,3} accuracy is 0.8%
+	Removing feature(s) {7,2,5,4} accuracy is 0.742%
+	Removing feature(s) {7,2,5,6} accuracy is 0.81%
+	Removing feature(s) {7,2,5,8} accuracy is 0.798%
+	Removing feature(s) {7,2,5,9} accuracy is 0.828%
+	Removing feature(s) {7,2,5,10} accuracy is 0.782%
+	Removing feature(s) {7,2,5,11} accuracy is 0.794%
+	Removing feature(s) {7,2,5,12} accuracy is 0.772%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {7,2,5,9} was best, accuracy is 0.828%
+
+	Removing feature(s) {7,2,5,9,1} accuracy is 0.838%
+	Removing feature(s) {7,2,5,9,3} accuracy is 0.828%
+	Removing feature(s) {7,2,5,9,4} accuracy is 0.734%
+	Removing feature(s) {7,2,5,9,6} accuracy is 0.828%
+	Removing feature(s) {7,2,5,9,8} accuracy is 0.834%
+	Removing feature(s) {7,2,5,9,10} accuracy is 0.778%
+	Removing feature(s) {7,2,5,9,11} accuracy is 0.814%
+	Removing feature(s) {7,2,5,9,12} accuracy is 0.822%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {7,2,5,9,1} was best, accuracy is 0.838%
+
+	Removing feature(s) {7,2,5,9,1,3} accuracy is 0.852%
+	Removing feature(s) {7,2,5,9,1,4} accuracy is 0.754%
+	Removing feature(s) {7,2,5,9,1,6} accuracy is 0.842%
+	Removing feature(s) {7,2,5,9,1,8} accuracy is 0.842%
+	Removing feature(s) {7,2,5,9,1,10} accuracy is 0.794%
+	Removing feature(s) {7,2,5,9,1,11} accuracy is 0.834%
+	Removing feature(s) {7,2,5,9,1,12} accuracy is 0.824%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {7,2,5,9,1,3} was best, accuracy is 0.852%
+
+	Removing feature(s) {7,2,5,9,1,3,4} accuracy is 0.726%
+	Removing feature(s) {7,2,5,9,1,3,6} accuracy is 0.868%
+	Removing feature(s) {7,2,5,9,1,3,8} accuracy is 0.876%
+	Removing feature(s) {7,2,5,9,1,3,10} accuracy is 0.822%
+	Removing feature(s) {7,2,5,9,1,3,11} accuracy is 0.854%
+	Removing feature(s) {7,2,5,9,1,3,12} accuracy is 0.828%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {7,2,5,9,1,3,8} was best, accuracy is 0.876%
+
+	Removing feature(s) {7,2,5,9,1,3,8,4} accuracy is 0.718%
+	Removing feature(s) {7,2,5,9,1,3,8,6} accuracy is 0.866%
+	Removing feature(s) {7,2,5,9,1,3,8,10} accuracy is 0.824%
+	Removing feature(s) {7,2,5,9,1,3,8,11} accuracy is 0.89%
+	Removing feature(s) {7,2,5,9,1,3,8,12} accuracy is 0.886%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {7,2,5,9,1,3,8,11} was best, accuracy is 0.89%
+
+	Removing feature(s) {7,2,5,9,1,3,8,11,4} accuracy is 0.714%
+	Removing feature(s) {7,2,5,9,1,3,8,11,6} accuracy is 0.96%
+	Removing feature(s) {7,2,5,9,1,3,8,11,10} accuracy is 0.818%
+	Removing feature(s) {7,2,5,9,1,3,8,11,12} accuracy is 0.92%
+
+Feature set {7,2,5,9,1,3,8,11,6} was best, accuracy is 0.96%
+
+	Removing feature(s) {7,2,5,9,1,3,8,11,6,4} accuracy is 0.754%
+	Removing feature(s) {7,2,5,9,1,3,8,11,6,10} accuracy is 0.838%
+	Removing feature(s) {7,2,5,9,1,3,8,11,6,12} accuracy is 0.96%
+
+Feature set {7,2,5,9,1,3,8,11,6,12} was best, accuracy is 0.96%
+
+	Removing feature(s) {7,2,5,9,1,3,8,11,6,12,4} accuracy is 0.75%
+	Removing feature(s) {7,2,5,9,1,3,8,11,6,12,10} accuracy is 0.804%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {7,2,5,9,1,3,8,11,6,12,10} was best, accuracy is 0.804%
+
+	Removing feature(s) {7,2,5,9,1,3,8,11,6,12,10,4} accuracy is 0.824%
+
+(Warning, Accuracy has decreased!!! Continuing search in case of local maxima)
+
+Feature set {7,2,5,9,1,3,8,11,6,12,10,4} was best, accuracy is 0.824%
+
+Finished search!!! The best feature subset is {4,10}, which has an accuracy of 0.96%
+Elapsed (after compilation) = 95.77560257911682

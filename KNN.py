@@ -1,28 +1,40 @@
 import numpy as np
 import pandas as pd
 import copy
+import time
 
 ### Sample Files
 ### Referenced GeeksforGeeks to read in a txt file https://www.geeksforgeeks.org/how-to-read-space-delimited-files-in-pandas/#
-small_data_19 = pd.read_csv('/Users/kevintu/Documents/Python/CS205/CS_205/CS205_small_Data__19.txt', sep='  ', header=None)
+small_data_19 = pd.read_csv('/home/stu024/CS_205/CS205_small_Data__19.txt', sep='  ', header=None)
 ### Referenced pandas library documentation for renaming a column https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html
 small_data_19 = small_data_19.rename(columns={0 : "label"})
 
 ### Referenced GeeksforGeeks to read in a txt file https://www.geeksforgeeks.org/how-to-read-space-delimited-files-in-pandas/#
-large_data_6 = pd.read_csv('/Users/kevintu/Documents/Python/CS205/CS_205/CS205_large_Data__6.txt', sep='  ', header=None)
+large_data_6 = pd.read_csv('/home/stu024/CS_205/CS205_large_Data__6.txt', sep='  ', header=None)
 ### Referenced pandas library documentation for renaming a column https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html
 large_data_6 = large_data_6.rename(columns={0 : "label"})
 
 ### Assigned Files
 ### Referenced GeeksforGeeks to read in a txt file https://www.geeksforgeeks.org/how-to-read-space-delimited-files-in-pandas/#
-small_data_21 = pd.read_csv('/Users/kevintu/Documents/Python/CS205/CS_205/CS205_small_Data__21.txt', sep='  ', header=None)
+small_data_21 = pd.read_csv('/home/stu024/CS_205/CS205_small_Data__21.txt', sep='  ', header=None)
 ### Referenced pandas library documentation for renaming a column https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html
 small_data_21 = small_data_21.rename(columns={0 : "label"})
 
 ### Referenced GeeksforGeeks to read in a txt file https://www.geeksforgeeks.org/how-to-read-space-delimited-files-in-pandas/#
-large_data_13 = pd.read_csv('/Users/kevintu/Documents/Python/CS205/CS_205/CS205_large_Data__13.txt', sep='  ', header=None)
+large_data_13 = pd.read_csv('/home/stu024/CS_205/CS205_large_Data__13.txt', sep='  ', header=None)
 ### Referenced pandas library documentation for renaming a column https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html
 large_data_13 = large_data_13.rename(columns={0 : "label"})
+
+### Songyu Files
+### Referenced GeeksforGeeks to read in a txt file https://www.geeksforgeeks.org/how-to-read-space-delimited-files-in-pandas/#
+small_data_28 = pd.read_csv('/home/stu024/CS_205/CS205_small_Data__28.txt', sep='  ', header=None)
+### Referenced pandas library documentation for renaming a column https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html
+small_data_28 = small_data_28.rename(columns={0 : "label"})
+
+### Referenced GeeksforGeeks to read in a txt file https://www.geeksforgeeks.org/how-to-read-space-delimited-files-in-pandas/#
+large_data_39 = pd.read_csv('/home/stu024/CS_205/CS205_large_Data__39.txt', sep='  ', header=None)
+### Referenced pandas library documentation for renaming a column https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html
+large_data_39 = large_data_39.rename(columns={0 : "label"})
 
 class KNN_Classifier:
     def __init__(self, train_set=None, test_set=None, k=None, nearest_neighbors=None):
@@ -228,6 +240,10 @@ elif file == 3:
         df = large_data_6
 elif file == 4:
         df = large_data_13
+elif file == 5:
+        df = small_data_28
+elif file == 6:
+        df = large_data_39
     
 # Asks the user the algorithm they would like to use
 print("Please select the algorithm you would like to run: \n")
@@ -253,15 +269,27 @@ print("Running KNN with all " + str(df.shape[1]-1) + " åfeatures, using \"leave
 feat_select = Feature_Selection(df, 1)
 print("Beginning search.\n")
 if algo == 1:
+        start = time.time()
         feat_select.greedy_forward()
         feat_select.print_best_features()
+        end = time.time()
+        print("Elapsed (with compilation) = %s" % (end - start))
 elif algo == 2:
+        start = time.time()
         feat_select.greedy_backward()
         feat_select.print_best_features()
+        end = time.time()
+        print("Elapsed (after compilation) = %s" % (end - start))
 elif algo == 3:
+        start = time.time()
         print("Starting with Forward Selection.\n")
         feat_select.greedy_forward()
         feat_select.print_best_features()
+        end = time.time()
+        print("Elapsed (after compilation) = %s" % (end - start))
+        start = time.time()
         print("Starting Backward Elimination.\n")
         feat_select.greedy_backward()
         feat_select.print_best_features()
+        end = time.time()
+        print("Elapsed (after compilation) = %s" % (end - start))
